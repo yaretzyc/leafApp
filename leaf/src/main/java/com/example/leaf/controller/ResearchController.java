@@ -80,6 +80,8 @@ public class ResearchController {
         return researcherService.deleteResearcherSection(researcherId, sectionId);
     }
 
+    //GET SECTION LIST FOR A RESEARCHER
+
 
     ///////////////////////////////STUDENTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -90,8 +92,18 @@ public class ResearchController {
         return researcherService.createResearcherStudent(researcherId, studentObj);
     }
 
+    //UPDATE
+    @PutMapping("/researcher/{researcherId}/student/{studentId}/")
+    public Student updateResearcherStudent(@PathVariable (value = "researcherId")Long researcherId,
+                                           @PathVariable(value = "studentId")Long studentId,
+                                           @RequestBody Student studentObj){
+        return researcherService.updateResearcherStudent(researcherId, studentId, studentObj);
+    }
 
-    
+    //DELETE
+
+
+
 
 
 

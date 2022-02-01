@@ -152,6 +152,8 @@ public class ResearcherService {
 
     }
 
+    //GET SECTION LIST FOR A RESEARCHER
+
 
     ///////////////////////////////STUDENTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -164,6 +166,27 @@ public class ResearcherService {
         }else{
             throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
         }
+    }
+
+    public Student updateResearcherStudent(Long researcherId, Long studentId, Student studentObj){
+        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
+        if(researcher.isPresent()){
+            for(Student student : researcher.get().getStudentList() ){
+                if(student.getId() == studentId){
+                    Student studentUpdate = studentRepository.findById(studentId).get();
+                    studentUpdate.setFirstName(studentObj.getFirstName());
+                    studentUpdate.setLastName(studentObj.getLastName());
+                    studentUpdate.setEmail(studentObj.getEmail());
+                    studentUpdate.setPhone(studentObj.getPhone());
+                    studentUpdate.setIsActive(studentObj.getIsActive());
+                    studentUpdate.setWorkType(studentObj.getWorkType());
+
+                    return studentRepository.save(studentUpdate);
+                }
+                throw new InformationNotFoundException("Student with id " + studentId + " not found");
+            }
+        }
+        throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
     }
 
 
