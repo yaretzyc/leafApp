@@ -57,6 +57,7 @@ public class ResearchController {
         return researcherService.deleteResearcher(researcherId);
     }
 
+    ///////////////////////////////////////////////SECTIONS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
 

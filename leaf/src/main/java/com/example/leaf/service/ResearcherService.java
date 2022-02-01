@@ -4,6 +4,7 @@ import com.example.leaf.exceptions.InformationExistException;
 import com.example.leaf.exceptions.InformationNotFoundException;
 import com.example.leaf.model.Researcher;
 import com.example.leaf.repository.ResearcherRepository;
+import com.example.leaf.repository.SectionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,13 @@ public class ResearcherService {
     @Autowired
     public void setResearcherRepository(ResearcherRepository researcherRepository){
         this.researcherRepository = researcherRepository;
+    }
+
+    private SectionRepository sectionRepository;
+
+    @Autowired
+    public void setSectionRepository(SectionRepository sectionRepository){
+        this.sectionRepository= sectionRepository;
     }
 
 
@@ -80,6 +88,9 @@ public class ResearcherService {
             throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
         }
     }
+
+
+    ///////////////////////////////////////////////SECTIONS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
 
