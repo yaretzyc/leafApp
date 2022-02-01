@@ -151,7 +151,7 @@ public class ResearchController {
 
 
     @DeleteMapping("/researcher/{researcherId}/section/{sectionId}/plant/{plantId}")
-    public Plant deleteSectionPlant(@PathVariable(value = "researcherId")Long researcherId,
+    public Optional<Plant> deleteSectionPlant(@PathVariable(value = "researcherId")Long researcherId,
                                     @PathVariable(value = "sectionId")Long sectionId,
                                     @PathVariable(value = "plantId")Long plantId){
         return researcherService.deleteSectionPlant(researcherId, sectionId, plantId);

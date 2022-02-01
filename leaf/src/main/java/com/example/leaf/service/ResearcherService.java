@@ -286,11 +286,31 @@ public class ResearcherService {
 
 
     public List<Plant> getAllPlantList(){
-        System.out.println("Service calling getAllPlant ==> ");
+        System.out.println("Service calling getAllPlantList ==> ");
         return plantRepository.findAll();
     }
 
 
+    public Optional<Plant> deleteSectionPlant(Long researcherId, Long sectionId, Long plantId){
+        System.out.println("service calling deleteSectionPlant ==>");
+        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
+        if(researcher.isPresent()){
+            Optional<Section> section = sectionRepository.findById(sectionId);
+            if (section.isPresent()){
+                for(Plant plant : section.get().getPlantList()){
+                    if(plant.getId() == plantId) {
+                        Plant plant1 = plantRepository.findById(plantId).get();
+                        plantRepository.deleteById(plantId);
+                        return Optional.of(plant1);
+                    }
+                }
+                throw new InformationNotFoundException("plant with id " + plantId + " not found");
+            }
+            throw new InformationNotFoundException("Section with id " + sectionId + " not found");
+        }
+        throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
+
+    }
 
 
 
