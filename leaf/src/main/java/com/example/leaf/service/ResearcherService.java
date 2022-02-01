@@ -280,6 +280,11 @@ public class ResearcherService {
     }
 
 
+//    public List<Plant> getAllPlantList(){
+//        System.out.println("Service calling getAllPlant ==> ");
+//        return plantRepository.findAll();
+//    }
+
 
 
 
