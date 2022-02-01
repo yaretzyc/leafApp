@@ -1,6 +1,10 @@
 package com.example.leaf.model;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "students")
@@ -31,6 +35,9 @@ public class Student {
 
     //here map to the plant_id so that have list of plants
 
+    @OneToMany(mappedBy= "student", orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Plant> plantList;
 
     //constructors
 
@@ -48,6 +55,14 @@ public class Student {
     }
     //getters and setters
 
+
+    public List<Plant> getPlantList() {
+        return plantList;
+    }
+
+    public void setPlantList(List<Plant> plantList) {
+        this.plantList = plantList;
+    }
 
     public Long getId() {
         return id;

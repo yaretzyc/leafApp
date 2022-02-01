@@ -1,6 +1,10 @@
 package com.example.leaf.model;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "researchers")
@@ -27,7 +31,9 @@ public class Researcher {
     private String email;
 
     //map to section to get section id here
-
+    @OneToMany(mappedBy= "researcher", orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Section> sectionList;
 
     //constructors
 
@@ -46,6 +52,14 @@ public class Researcher {
 
     //getters and setters
 
+
+    public List<Section> getSectionList() {
+        return sectionList;
+    }
+
+    public void setSectionList(List<Section> sectionList) {
+        this.sectionList = sectionList;
+    }
 
     public Long getId() {
         return id;

@@ -1,5 +1,7 @@
 package com.example.leaf.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -27,7 +29,10 @@ public class Plant {
     private String comments;
 
 //map to the section_id bc one section can have many types of plants
-
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "student_id")
+    private Student student;
 
     //constructors
     public Plant() {
@@ -45,6 +50,14 @@ public class Plant {
 
     //getters and setters
 
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
 
     public Long getId() {
         return id;

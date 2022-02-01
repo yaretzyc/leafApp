@@ -1,5 +1,7 @@
 package com.example.leaf.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -21,6 +23,10 @@ public class Section {
     //map to the researcher to have the id here
     // one researcher is in charge of one or many sections
 
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "researcher_id")
+    private Researcher researcher;
 
     //constructors
     public Section() {
@@ -35,6 +41,14 @@ public class Section {
 
     //getters and setters
 
+
+    public Researcher getResearcher() {
+        return researcher;
+    }
+
+    public void setResearcher(Researcher researcher) {
+        this.researcher = researcher;
+    }
 
     public Long getId() {
         return Id;
