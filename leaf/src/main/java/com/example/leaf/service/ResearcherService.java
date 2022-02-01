@@ -5,6 +5,7 @@ import com.example.leaf.exceptions.InformationNotFoundException;
 import com.example.leaf.model.Researcher;
 import com.example.leaf.model.Section;
 import com.example.leaf.model.Student;
+import com.example.leaf.repository.PlantRepository;
 import com.example.leaf.repository.ResearcherRepository;
 import com.example.leaf.repository.SectionRepository;
 import com.example.leaf.repository.StudentRepository;
@@ -31,16 +32,21 @@ public class ResearcherService {
         this.sectionRepository= sectionRepository;
     }
 
-
     private StudentRepository studentRepository;
-
-/////////////////////////////////////////////////////RESEARCHER \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
     @Autowired
     public void setStudentRepository(StudentRepository studentRepository){
         this.studentRepository = studentRepository;
     }
 
+    private PlantRepository plantRepository;
+
+    @Autowired
+    public void setPlantRepository(PlantRepository plantRepository){
+        this.plantRepository = plantRepository;
+    }
+
+/////////////////////////////////////////////////////RESEARCHER \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
     public Researcher createResearcher(Researcher researcherObj){
@@ -207,6 +213,9 @@ public class ResearcherService {
         throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
 
 }
+
+
+/////////////////////////////////// PLANTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
 
