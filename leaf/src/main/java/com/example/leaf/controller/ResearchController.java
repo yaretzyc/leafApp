@@ -5,6 +5,8 @@ import com.example.leaf.service.ResearcherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path = "/api")
 public class ResearchController {
@@ -26,6 +28,11 @@ public class ResearchController {
     @PostMapping("/researcher/")
     public Researcher createResearcher(@RequestBody Researcher researcherObj){
         return researcherService.createResearcher(researcherObj);
+    }
+
+    @GetMapping("/researchers/")
+    public List<Researcher> getResearcherList(){
+        return researcherService.getResearcherList();
     }
 
 

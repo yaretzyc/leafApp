@@ -6,6 +6,8 @@ import com.example.leaf.repository.ResearcherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ResearcherService {
 
@@ -29,5 +31,13 @@ public class ResearcherService {
 
         }
     }
+
+    ///get list of researchers
+    public List<Researcher> getResearcherList(){
+        return researcherRepository.findAll();
+    }
+
+    //
+
 
 }
