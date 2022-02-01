@@ -2,6 +2,7 @@ package com.example.leaf.service;
 
 import com.example.leaf.exceptions.InformationExistException;
 import com.example.leaf.exceptions.InformationNotFoundException;
+import com.example.leaf.model.Plant;
 import com.example.leaf.model.Researcher;
 import com.example.leaf.model.Section;
 import com.example.leaf.model.Student;
@@ -218,6 +219,21 @@ public class ResearcherService {
 /////////////////////////////////// PLANTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
+    public Plant createSectionPlant(Long researcherId, Long sectionId, Plant plantObj){
+        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
+        if(researcher.isPresent()){
+            Optional<Section> section = sectionRepository.findById(sectionId);
+            if(section.isPresent()){
+                plantObj.setSection(section.get());
+                return plantRepository.save(plantObj);
+            }
+            throw new InformationNotFoundException("Section with id " + sectionId + " not found");
+
+
+        }else{
+            throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
+        }
+    }
 
 
 

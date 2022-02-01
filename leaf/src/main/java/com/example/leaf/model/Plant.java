@@ -60,6 +60,14 @@ public class Plant {
     //getters and setters
 
 
+    public Section getSection() {
+        return section;
+    }
+
+    public void setSection(Section section) {
+        this.section = section;
+    }
+
     public Student getStudent() {
         return student;
     }

@@ -1,5 +1,6 @@
 package com.example.leaf.controller;
 
+import com.example.leaf.model.Plant;
 import com.example.leaf.model.Researcher;
 import com.example.leaf.model.Section;
 import com.example.leaf.model.Student;
@@ -108,8 +109,19 @@ public class ResearchController {
     }
 
 /////////////////////////////////// PLANTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//researchid, sectionid, ==> create new plant
 
+    @PostMapping("/researcher/{researcherId}/section/{sectionId}/plant/")
+    public Plant createSectionPlant(@PathVariable(value = "researcherId")Long researcherId,
+                                    @PathVariable(value = "sectionId")Long sectionId,
+                                    @RequestBody Plant plantObj){
+        return researcherService.createSectionPlant(researcherId, sectionId, plantObj);
+    }
 
+    //get plant list
+    @GetMapping("/researcher/{researcher}")
 
+//update on plant section
 
+    //delete one plant section
 }
