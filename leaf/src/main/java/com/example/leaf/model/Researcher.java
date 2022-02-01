@@ -2,6 +2,7 @@ package com.example.leaf.model;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.springframework.context.annotation.Lazy;
 
 import javax.persistence.*;
 import java.util.List;
@@ -35,6 +36,11 @@ public class Researcher {
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Section> sectionList;
 
+    @OneToMany(mappedBy = "researcher", orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Student> studentList;
+
+
     //constructors
 
     public Researcher() {
@@ -52,6 +58,14 @@ public class Researcher {
 
     //getters and setters
 
+
+    public List<Student> getStudentList() {
+        return studentList;
+    }
+
+    public void setStudentList(List<Student> studentList) {
+        this.studentList = studentList;
+    }
 
     public List<Section> getSectionList() {
         return sectionList;

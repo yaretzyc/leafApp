@@ -1,5 +1,6 @@
 package com.example.leaf.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -39,6 +40,13 @@ public class Student {
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Plant> plantList;
 
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "researcher_id")
+    private Researcher researcher;
+
+
+
     //constructors
 
     public Student() {
@@ -55,6 +63,14 @@ public class Student {
     }
     //getters and setters
 
+
+    public Researcher getResearcher() {
+        return researcher;
+    }
+
+    public void setResearcher(Researcher researcher) {
+        this.researcher = researcher;
+    }
 
     public List<Plant> getPlantList() {
         return plantList;
