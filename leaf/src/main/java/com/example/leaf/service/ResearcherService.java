@@ -35,12 +35,13 @@ public class ResearcherService {
 
     ///get list of researchers
     public List<Researcher> getResearcherList(){
+        System.out.println("Service calling getResearcherList ==> ");
         return researcherRepository.findAll();
     }
 
     //GET ONE RESEARCHER WITH ID
     public Optional<Researcher> getOneResearcher(Long researcherId){
-
+        System.out.println("Service Calling getOneResearcher ==>");
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
         if(researcher.isPresent()){
             return researcher;
@@ -66,6 +67,22 @@ public class ResearcherService {
             throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
         }
     }
+
+    //DELETE RESEARCHER RECORD
+
+    public Optional<Researcher> deleteResearcher(Long researcherId){
+        System.out.println("Service calling deleteResearcher ==>");
+        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
+        if(researcher.isPresent()) {
+            researcherRepository.deleteById(researcherId);
+            return researcher;
+        }else{
+            throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
+        }
+    }
+
+
+
 
 
 

@@ -42,6 +42,7 @@ public class ResearchController {
     public Optional<Researcher> getOneResearcher(@PathVariable(value = "researcherId")Long researcherId){
         return researcherService.getOneResearcher(researcherId);
     }
+
 //UPDATE RESEARCHER RECORD
     @PutMapping("/researcher/{researcherId}/")
     public Researcher updateResearcher(@PathVariable(value = "researcherId") Long researcherId,
@@ -49,8 +50,12 @@ public class ResearchController {
         return researcherService.updateResearcher(researcherId, researcherObj);
     }
 
+    //DELETE RESEARCHER RECORD
+    @DeleteMapping("/researcher/{researcherId}")
+    public Optional<Researcher> deleteResearcher(@PathVariable (value = "researcherId") Long researcherId){
 
-
+        return researcherService.deleteResearcher(researcherId);
+    }
 
 
 
