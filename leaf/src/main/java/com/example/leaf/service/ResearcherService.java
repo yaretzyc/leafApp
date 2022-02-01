@@ -143,7 +143,7 @@ public class ResearcherService {
 
     //delete a section for a researcher
     public Optional<Section> deleteResearcherSection(Long researcherId, Long sectionId){
-
+        System.out.println("service calling deleteResearcherSection ==> ");
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
         if(researcher.isPresent()){
             for(Section section : researcher.get().getSectionList()){
@@ -166,6 +166,7 @@ public class ResearcherService {
 
 
     public Student createResearcherStudent(Long researcherId, Student studentObj){
+        System.out.println("service calling createResearcherStudent ==>");
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
         if(researcher.isPresent()){
             studentObj.setResearcher(researcher.get());
@@ -176,6 +177,7 @@ public class ResearcherService {
     }
 
     public Student updateResearcherStudent(Long researcherId, Long studentId, Student studentObj){
+        System.out.println("service calling updateResearcherStudent ==>");
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
         if(researcher.isPresent()){
             for(Student student : researcher.get().getStudentList() ){
@@ -200,6 +202,7 @@ public class ResearcherService {
     //delete  a student
 
     public Optional<Student> deleteResearcherStudent(Long researcherId, Long studentId){
+        System.out.println("service calling deleteResearcherStudent ==>");
     Optional<Researcher> researcher = researcherRepository.findById(researcherId);
         if(researcher.isPresent()){
         for(Student student : researcher.get().getStudentList()){
@@ -220,6 +223,7 @@ public class ResearcherService {
 
 
     public Plant createSectionPlant(Long researcherId, Long sectionId, Plant plantObj){
+        System.out.println("service calling createSectionPlant ==>");
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
         if(researcher.isPresent()){
             Optional<Section> section = sectionRepository.findById(sectionId);
@@ -238,6 +242,7 @@ public class ResearcherService {
 
     //getPlantList
     public List<Plant> getPlantList(Long researcherId, Long sectionId){
+        System.out.println("service calling getPlantList ==>");
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
         if(researcher.isPresent()){
             Optional<Section> section = sectionRepository.findById(sectionId);
@@ -280,10 +285,10 @@ public class ResearcherService {
     }
 
 
-//    public List<Plant> getAllPlantList(){
-//        System.out.println("Service calling getAllPlant ==> ");
-//        return plantRepository.findAll();
-//    }
+    public List<Plant> getAllPlantList(){
+        System.out.println("Service calling getAllPlant ==> ");
+        return plantRepository.findAll();
+    }
 
 
 
