@@ -11,8 +11,10 @@ public class section {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
+    @Column
     private String type;
 
+    @Column
     private String location;
 
 
