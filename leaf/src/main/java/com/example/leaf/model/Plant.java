@@ -28,11 +28,20 @@ public class Plant {
     @Column
     private String comments;
 
-//map to the section_id bc one section can have many types of plants
+    //map plant and student
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "student_id")
     private Student student;
+
+
+//Many plants are in a section
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "section_id")
+    private Section section;
+
+
 
     //constructors
     public Plant() {

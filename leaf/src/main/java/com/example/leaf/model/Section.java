@@ -1,8 +1,11 @@
 package com.example.leaf.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "sections")
@@ -27,6 +30,12 @@ public class Section {
     @ManyToOne
     @JoinColumn(name = "researcher_id")
     private Researcher researcher;
+
+//One section has many plants
+    @OneToMany(mappedBy= "section", orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Plant> plantList;
+
 
     //constructors
     public Section() {
