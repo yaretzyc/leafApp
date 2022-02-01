@@ -38,10 +38,19 @@ public class ResearchController {
     }
 
     //GET ONLY ONE RESEARCHER
-    @GetMapping("/researcher/{researcherId}")
+    @GetMapping("/researcher/{researcherId}/")
     public Optional<Researcher> getOneResearcher(@PathVariable(value = "researcherId")Long researcherId){
         return researcherService.getOneResearcher(researcherId);
     }
+//UPDATE RESEARCHER RECORD
+    @PutMapping("/researcher/{researcherId}/")
+    public Researcher updateResearcher(@PathVariable(value = "researcherId") Long researcherId,
+                                       @RequestBody Researcher researcherObj){
+        return researcherService.updateResearcher(researcherId, researcherObj);
+    }
+
+
+
 
 
 

@@ -39,7 +39,6 @@ public class ResearcherService {
     }
 
     //GET ONE RESEARCHER WITH ID
-
     public Optional<Researcher> getOneResearcher(Long researcherId){
 
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
@@ -50,6 +49,26 @@ public class ResearcherService {
         }
 
     }
+
+//UPDATE THE RESEARCHER RECORD
+    public Researcher updateResearcher(Long researcherId, Researcher researcherObj) {
+        System.out.println("Service calling updateResearcher==>");
+        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
+        if (researcher.isPresent()) {
+            Researcher updateResearcher = researcherRepository.findById(researcherId).get();
+            updateResearcher.setFirstName(researcherObj.getFirstName());
+            updateResearcher.setLastName(researcherObj.getLastName());
+            updateResearcher.setEmail(researcherObj.getEmail());
+            updateResearcher.setPhone(researcherObj.getPhone());
+            updateResearcher.setTitle(researcherObj.getTitle());
+            return researcherRepository.save(updateResearcher);
+        } else {
+            throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
+        }
+    }
+
+
+
 
 
 
