@@ -130,6 +130,13 @@ public class ResearchController {
 
 //update on plant section
 
+    @PutMapping("/researcher/{researcherId}/section/{sectionId}/plant/{plantId}")
+    public Plant updateSectionPlant(@PathVariable(value = "researcherId")Long researcherId,
+                                    @PathVariable(value = "sectionId")Long sectionId,
+                                    @PathVariable(value = "plantId")Long plantId,
+                                    @RequestBody Plant plantObj){
+        return researcherService.updateSectionPlant(researcherId, sectionId, plantId, plantObj);
+    }
 
 
     //delete one plant section

@@ -242,15 +242,41 @@ public class ResearcherService {
         if(researcher.isPresent()){
             Optional<Section> section = sectionRepository.findById(sectionId);
             if(section.isPresent()){
-
                 return section.get().getPlantList();
             }
             throw new InformationNotFoundException("Section with id " + sectionId + " not found");
-
-
         }else{
             throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
         }
+    }
+
+    //update the plant
+    public Plant updateSectionPlant(Long researcherId, Long sectionId, Long plantId, Plant plantObj) {
+        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
+        if (researcher.isPresent()) {
+            Optional<Section> section = sectionRepository.findById(sectionId);
+            if (section.isPresent()) {
+                Optional<Plant> plant = plantRepository.findById(plantId);
+                if (plant.isPresent()) {
+                    for (Plant plant1 : section.get().getPlantList()) {
+                        if (plant1.getId() == plantId) {
+                            Plant plantUpdate = plantRepository.findById(plantId).get();
+                            plantUpdate.setPlantName(plantObj.getPlantName());
+                            plantUpdate.setIsHealthy(plantObj.getIsHealthy());
+                            plantUpdate.setPlantType(plantObj.getPlantType());
+                            plantUpdate.setNumberOfPots(plantObj.getNumberOfPots());
+                            plantUpdate.setComments(plantObj.getComments());
+
+                            return plantRepository.save(plantUpdate);
+                        }
+                    }
+                }
+                throw new InformationNotFoundException("plant with id " + plantId + " not found");
+            }
+            throw new InformationNotFoundException("section with id " + sectionId + " not found");
+        }
+        throw new InformationNotFoundException("researcher with id " + researcherId + " not found");
+
     }
 
 
