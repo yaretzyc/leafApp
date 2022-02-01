@@ -3,6 +3,7 @@ package com.example.leaf.service;
 import com.example.leaf.exceptions.InformationExistException;
 import com.example.leaf.exceptions.InformationNotFoundException;
 import com.example.leaf.model.Researcher;
+import com.example.leaf.model.Section;
 import com.example.leaf.repository.ResearcherRepository;
 import com.example.leaf.repository.SectionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,10 +35,10 @@ public class ResearcherService {
 
         Researcher researcher  = researcherRepository.findByEmail(researcherObj.getEmail());
 
-        if(researcher != null){ //CATEGORY NOT NULL MEANS IT EXISTS ; IF IT IS NULL MEANS DOES NOT EXISTS
-            throw new InformationExistException("researcher with email" + researcher.getEmail()  + " already exists"); //409 //category.getName9) is like indian
+        if(researcher != null){ //researcher NOT NULL MEANS IT EXISTS ; IF IT IS NULL MEANS DOES NOT EXISTS
+            throw new InformationExistException("researcher with email" + researcher.getEmail()  + " already exists");
         }else{
-            return researcherRepository.save(researcherObj); //if  null then doesn;t exist than save the data
+            return researcherRepository.save(researcherObj); //if  null then does not exist than save the data
         }
     }
 
@@ -91,6 +92,23 @@ public class ResearcherService {
 
 
     ///////////////////////////////////////////////SECTIONS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+    //creating a section using the researcherId
+    public Section createResearcherSection(Long researcherId, Section sectionObj){
+        System.out.println("Service calling createResearcherSection ==> ");
+
+        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
+        if(researcher.isPresent()){ //IF NULL then does not exist/was not found
+            sectionObj.setResearcher(researcher.get());
+            return sectionRepository.save(sectionObj);
+        }else {
+            throw new InformationNotFoundException("Researcher with id "  + researcherId + " not found");
+
+        }
+
+    }
+
 
 
 

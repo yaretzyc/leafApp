@@ -1,6 +1,7 @@
 package com.example.leaf.controller;
 
 import com.example.leaf.model.Researcher;
+import com.example.leaf.model.Section;
 import com.example.leaf.service.ResearcherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -58,6 +59,13 @@ public class ResearchController {
     }
 
     ///////////////////////////////////////////////SECTIONS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//THERE ARE MANY SECTIONS THAT BELONG TO ONE RESEARCHER WHERE THEY CONDUCT THEIR INDIVIDUAL PROJECTS
+    @PostMapping("/researcher/{researcherId}/section/")
+    public Section createResearcherSection(@PathVariable(value = "researcherId")Long researcherId,
+                                           @RequestBody Section sectionObj){
+        return researcherService.createResearcherSection(researcherId, sectionObj);
+    }
+
 
 
 
