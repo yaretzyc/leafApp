@@ -2,6 +2,7 @@ package com.example.leaf.controller;
 
 import com.example.leaf.model.Researcher;
 import com.example.leaf.model.Section;
+import com.example.leaf.model.Student;
 import com.example.leaf.service.ResearcherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -83,8 +84,14 @@ public class ResearchController {
     ///////////////////////////////STUDENTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
     //CREATE STUDENT WITH RESEARCHERID
+    @PostMapping("/researcher/{researcherId}/student/")
+    public Student createResearcherStudent(@PathVariable(value = "researcherId")Long researcherId,
+                                           @RequestBody Student studentObj){
+        return researcherService.createResearcherStudent(researcherId, studentObj);
+    }
 
 
+    
 
 
 

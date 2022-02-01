@@ -4,6 +4,7 @@ import com.example.leaf.exceptions.InformationExistException;
 import com.example.leaf.exceptions.InformationNotFoundException;
 import com.example.leaf.model.Researcher;
 import com.example.leaf.model.Section;
+import com.example.leaf.model.Student;
 import com.example.leaf.repository.ResearcherRepository;
 import com.example.leaf.repository.SectionRepository;
 import com.example.leaf.repository.StudentRepository;
@@ -155,6 +156,15 @@ public class ResearcherService {
     ///////////////////////////////STUDENTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
+    public Student createResearcherStudent(Long researcherId, Student studentObj){
+        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
+        if(researcher.isPresent()){
+            studentObj.setResearcher(researcher.get());
+            return studentRepository.save(studentObj);
+        }else{
+            throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
+        }
+    }
 
 
 
