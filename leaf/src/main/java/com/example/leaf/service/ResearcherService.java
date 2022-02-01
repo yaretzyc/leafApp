@@ -1,12 +1,14 @@
 package com.example.leaf.service;
 
 import com.example.leaf.exceptions.InformationExistException;
+import com.example.leaf.exceptions.InformationNotFoundException;
 import com.example.leaf.model.Researcher;
 import com.example.leaf.repository.ResearcherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ResearcherService {
@@ -28,7 +30,6 @@ public class ResearcherService {
             throw new InformationExistException("researcher with email" + researcher.getEmail()  + " already exists"); //409 //category.getName9) is like indian
         }else{
             return researcherRepository.save(researcherObj); //if  null then doesn;t exist than save the data
-
         }
     }
 
@@ -37,7 +38,19 @@ public class ResearcherService {
         return researcherRepository.findAll();
     }
 
-    //
+    //GET ONE RESEARCHER WITH ID
+
+    public Optional<Researcher> getOneResearcher(Long researcherId){
+
+        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
+        if(researcher.isPresent()){
+            return researcher;
+        }else{
+            throw new InformationNotFoundException("Researcher with id of " + researcherId +  " not found");
+        }
+
+    }
+
 
 
 }

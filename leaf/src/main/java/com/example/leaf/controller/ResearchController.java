@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/api")
@@ -30,9 +31,16 @@ public class ResearchController {
         return researcherService.createResearcher(researcherObj);
     }
 
+    //GET LIST OF RESEARCHERS
     @GetMapping("/researchers/")
     public List<Researcher> getResearcherList(){
         return researcherService.getResearcherList();
+    }
+
+    //GET ONLY ONE RESEARCHER
+    @GetMapping("/researcher/{researcherId}")
+    public Optional<Researcher> getOneResearcher(@PathVariable(value = "researcherId")Long researcherId){
+        return researcherService.getOneResearcher(researcherId);
     }
 
 
