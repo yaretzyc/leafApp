@@ -25,7 +25,7 @@ public class ResearchController {
     public String getHelloWorld(){
         return "hello world";
     }
-
+//////////////////////////////////////////////////////RESEARCHER \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     //create researcher
     @PostMapping("/researcher/")
     public Researcher createResearcher(@RequestBody Researcher researcherObj){
@@ -79,6 +79,10 @@ public class ResearchController {
         return researcherService.deleteResearcherSection(researcherId, sectionId);
     }
 
+
+    ///////////////////////////////STUDENTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+    //CREATE STUDENT WITH RESEARCHERID
 
 
 

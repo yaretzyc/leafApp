@@ -6,6 +6,7 @@ import com.example.leaf.model.Researcher;
 import com.example.leaf.model.Section;
 import com.example.leaf.repository.ResearcherRepository;
 import com.example.leaf.repository.SectionRepository;
+import com.example.leaf.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +29,17 @@ public class ResearcherService {
     public void setSectionRepository(SectionRepository sectionRepository){
         this.sectionRepository= sectionRepository;
     }
+
+
+    private StudentRepository studentRepository;
+
+/////////////////////////////////////////////////////RESEARCHER \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+    @Autowired
+    public void setStudentRepository(StudentRepository studentRepository){
+        this.studentRepository = studentRepository;
+    }
+
 
 
     public Researcher createResearcher(Researcher researcherObj){
@@ -138,6 +150,10 @@ public class ResearcherService {
         throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
 
     }
+
+
+    ///////////////////////////////STUDENTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 
 
 
