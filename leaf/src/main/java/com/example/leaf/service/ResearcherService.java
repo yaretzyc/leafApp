@@ -99,13 +99,27 @@ public class ResearcherService {
         System.out.println("Service calling createResearcherSection ==> ");
 
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
-        if(researcher.isPresent()){ //IF NULL then does not exist/was not found
+        if(researcher.isPresent()){
             sectionObj.setResearcher(researcher.get());
             return sectionRepository.save(sectionObj);
         }else {
             throw new InformationNotFoundException("Researcher with id "  + researcherId + " not found");
 
         }
+
+    }
+
+
+    public List<Section> getResearcherSectionList(Long researcherId){
+        System.out.println("Service calling getResearcherSectionList ==> ");
+
+        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
+        if(researcher.isPresent()){
+            return researcher.get().getSectionList();
+        }else {
+            throw new InformationNotFoundException("Researcher with an id of " + researcherId + " was not found");
+        }
+
 
     }
 

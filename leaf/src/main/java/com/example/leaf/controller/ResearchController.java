@@ -66,6 +66,12 @@ public class ResearchController {
         return researcherService.createResearcherSection(researcherId, sectionObj);
     }
 
+    //get the list of sections for that one researcher
+    @GetMapping("/researcher/{researcherId}/section/")
+    public List<Section> getResearcherSectionList(@PathVariable(value = "researcherId")Long researcherId){
+        return researcherService.getResearcherSectionList(researcherId);
+
+    }
 
 
 
