@@ -18,6 +18,9 @@ public class Researcher {
     private String lastName;
 
     @Column
+    private String title;
+
+    @Column
     private String phone;
 
     @Column
@@ -31,10 +34,11 @@ public class Researcher {
     public Researcher() {
     }
 
-    public Researcher(Long id, String firstName, String lastName, String phone, String email) {
+    public Researcher(Long id, String firstName, String lastName, String title, String phone, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.title = title;
         this.phone = phone;
         this.email = email;
     }
@@ -65,6 +69,14 @@ public class Researcher {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getPhone() {
