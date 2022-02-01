@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "plants")
-public class plant {
+public class Plant {
 
     @Id
     @Column
@@ -30,10 +30,10 @@ public class plant {
 
 
     //constructors
-    public plant() {
+    public Plant() {
     }
 
-    public plant(Long id, String plantType, String plantName, Boolean isHealthy, Integer numberOfPots, String comments) {
+    public Plant(Long id, String plantType, String plantName, Boolean isHealthy, Integer numberOfPots, String comments) {
         this.id = id;
         this.plantType = plantType;
         this.plantName = plantName;

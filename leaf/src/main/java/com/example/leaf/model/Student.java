@@ -1,11 +1,10 @@
 package com.example.leaf.model;
 
-import javax.annotation.processing.Generated;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "researchers")
-public class researcher {
+@Table(name = "students")
+public class Student {
 
     @Id
     @Column
@@ -19,28 +18,34 @@ public class researcher {
     private String lastName;
 
     @Column
-    private String phone;
+    private String workType;
 
     @Column
     private String email;
 
-    //map to section to get section id here
+    @Column
+    private String phone;
+
+    @Column
+    private Boolean isActive;
+
+    //here map to the plant_id so that have list of plants
 
 
     //constructors
 
-    public researcher() {
+    public Student() {
     }
 
-    public researcher(Long id, String firstName, String lastName, String phone, String email) {
+    public Student(Long id, String firstName, String lastName, String workType, String email, String phone, Boolean isActive) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.phone = phone;
+        this.workType = workType;
         this.email = email;
+        this.phone = phone;
+        this.isActive = isActive;
     }
-
-
     //getters and setters
 
 
@@ -68,12 +73,12 @@ public class researcher {
         this.lastName = lastName;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getWorkType() {
+        return workType;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setWorkType(String workType) {
+        this.workType = workType;
     }
 
     public String getEmail() {
@@ -82,5 +87,21 @@ public class researcher {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Boolean getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
     }
 }

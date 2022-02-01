@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "sections")
-public class section {
+public class Section {
 
     @Id
     @Column
@@ -23,10 +23,10 @@ public class section {
 
 
     //constructors
-    public section() {
+    public Section() {
     }
 
-    public section(Long id, String type, String location) {
+    public Section(Long id, String type, String location) {
         Id = id;
         this.type = type;
         this.location = location;

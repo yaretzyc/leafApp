@@ -3,8 +3,8 @@ package com.example.leaf.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "students")
-public class student {
+@Table(name = "researchers")
+public class Researcher {
 
     @Id
     @Column
@@ -18,34 +18,28 @@ public class student {
     private String lastName;
 
     @Column
-    private String workType;
+    private String phone;
 
     @Column
     private String email;
 
-    @Column
-    private String phone;
-
-    @Column
-    private Boolean isActive;
-
-    //here map to the plant_id so that have list of plants
+    //map to section to get section id here
 
 
     //constructors
 
-    public student() {
+    public Researcher() {
     }
 
-    public student(Long id, String firstName, String lastName, String workType, String email, String phone, Boolean isActive) {
+    public Researcher(Long id, String firstName, String lastName, String phone, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.workType = workType;
-        this.email = email;
         this.phone = phone;
-        this.isActive = isActive;
+        this.email = email;
     }
+
+
     //getters and setters
 
 
@@ -73,22 +67,6 @@ public class student {
         this.lastName = lastName;
     }
 
-    public String getWorkType() {
-        return workType;
-    }
-
-    public void setWorkType(String workType) {
-        this.workType = workType;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPhone() {
         return phone;
     }
@@ -97,11 +75,11 @@ public class student {
         this.phone = phone;
     }
 
-    public Boolean getIsActive() {
-        return isActive;
+    public String getEmail() {
+        return email;
     }
 
-    public void setIsActive(Boolean isActive) {
-        this.isActive = isActive;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
