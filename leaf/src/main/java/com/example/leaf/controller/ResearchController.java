@@ -70,8 +70,15 @@ public class ResearchController {
     @GetMapping("/researcher/{researcherId}/section/")
     public List<Section> getResearcherSectionList(@PathVariable(value = "researcherId")Long researcherId){
         return researcherService.getResearcherSectionList(researcherId);
-
     }
+
+    //delete sectionid with researcher id
+    @DeleteMapping("/researcher/{researcherId}/section/{sectionId}/")
+    public Optional<Section> deleteResearcherSection(@PathVariable(value="researcherId")Long researcherId,
+                                                        @PathVariable(value = "sectionId")Long sectionId){
+        return researcherService.deleteResearcherSection(researcherId, sectionId);
+    }
+
 
 
 

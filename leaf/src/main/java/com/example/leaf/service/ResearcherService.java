@@ -109,7 +109,7 @@ public class ResearcherService {
 
     }
 
-
+//get list of sections for a researcher
     public List<Section> getResearcherSectionList(Long researcherId){
         System.out.println("Service calling getResearcherSectionList ==> ");
 
@@ -119,7 +119,23 @@ public class ResearcherService {
         }else {
             throw new InformationNotFoundException("Researcher with an id of " + researcherId + " was not found");
         }
+    }
 
+    //delete a section for a researcher
+    public Optional<Section> deleteResearcherSection(Long researcherId, Long sectionId){
+
+        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
+        if(researcher.isPresent()){
+            for(Section section : researcher.get().getSectionList()){
+                if(section.getId() == sectionId){
+                    Section section1 = sectionRepository.findById(sectionId).get();
+                    sectionRepository.deleteById(sectionId);
+                    return Optional.of(section1);
+                }
+                throw new InformationNotFoundException("Section with id " + sectionId + " not found");
+            }
+        }
+        throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
 
     }
 
