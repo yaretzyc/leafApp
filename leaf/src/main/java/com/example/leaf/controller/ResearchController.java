@@ -1,18 +1,31 @@
 package com.example.leaf.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.leaf.model.Researcher;
+import com.example.leaf.service.ResearcherService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/api")
 public class ResearchController {
+
+    @Autowired
+    public ResearcherService researcherService;
+
+
+
 
 
     //get hello world
     @GetMapping(path = "/hello-world/")
     public String getHelloWorld(){
         return "hello world";
+    }
+
+    //create researcher
+    @PostMapping("/researcher/")
+    public Researcher createResearcher(@RequestBody Researcher researcherObj){
+        return researcherService.createResearcher(researcherObj);
     }
 
 
