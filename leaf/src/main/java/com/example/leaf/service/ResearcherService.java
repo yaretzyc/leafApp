@@ -236,6 +236,24 @@ public class ResearcherService {
     }
 
 
+    //getPlantList
+    public List<Plant> getPlantList(Long researcherId, Long sectionId){
+        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
+        if(researcher.isPresent()){
+            Optional<Section> section = sectionRepository.findById(sectionId);
+            if(section.isPresent()){
+
+                return section.get().getPlantList();
+            }
+            throw new InformationNotFoundException("Section with id " + sectionId + " not found");
+
+
+        }else{
+            throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
+        }
+    }
+
+
 
 
 

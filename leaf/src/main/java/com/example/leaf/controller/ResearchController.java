@@ -108,6 +108,9 @@ public class ResearchController {
         return researcherService.deleteResearcherStudent(researcherId, studentId);
     }
 
+
+    //student get all plants list
+
 /////////////////////////////////// PLANTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //researchid, sectionid, ==> create new plant
 
@@ -119,9 +122,20 @@ public class ResearchController {
     }
 
     //get plant list
-    @GetMapping("/researcher/{researcher}")
+    @GetMapping("/researcher/{researcherId}/section/{sectionId}/plant")
+    public List<Plant> getPlantList(@PathVariable(value = "researcherId")Long researcherId,
+                                    @PathVariable(value = "sectionId")Long sectionId){
+        return researcherService.getPlantList(researcherId, sectionId);
+    }
 
 //update on plant section
 
+
+
     //delete one plant section
+
+
+
+    //
+
 }

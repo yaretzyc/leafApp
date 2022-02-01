@@ -51,6 +51,14 @@ public class Section {
     //getters and setters
 
 
+    public List<Plant> getPlantList() {
+        return plantList;
+    }
+
+    public void setPlantList(List<Plant> plantList) {
+        this.plantList = plantList;
+    }
+
     public Researcher getResearcher() {
         return researcher;
     }
