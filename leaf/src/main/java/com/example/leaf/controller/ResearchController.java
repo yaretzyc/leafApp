@@ -100,7 +100,12 @@ public class ResearchController {
         return researcherService.updateResearcherStudent(researcherId, studentId, studentObj);
     }
 
-    //DELETE
+    //DELETE student ///
+    @DeleteMapping("/researcher/{researcherId}/student/{studentId}/")
+    public Optional<Student> deleteResearcherStudent(@PathVariable (value= "researcherId")Long researcherId,
+                                                     @PathVariable(value = "studentId")Long studentId){
+        return researcherService.deleteResearcherStudent(researcherId, studentId);
+    }
 
 
 

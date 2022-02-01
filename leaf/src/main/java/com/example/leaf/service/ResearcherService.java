@@ -190,6 +190,24 @@ public class ResearcherService {
     }
 
 
+    //delete  a student
+
+    public Optional<Student> deleteResearcherStudent(Long researcherId, Long studentId){
+    Optional<Researcher> researcher = researcherRepository.findById(researcherId);
+        if(researcher.isPresent()){
+        for(Student student : researcher.get().getStudentList()){
+            if(student.getId() == studentId){
+                Student student1 = studentRepository.findById(studentId).get();
+                studentRepository.deleteById(studentId);
+                return Optional.of(student1);
+            }
+            throw new InformationNotFoundException("Student with id " + studentId + " not found");
+        }
+    }
+        throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
+
+}
+
 
 
 
