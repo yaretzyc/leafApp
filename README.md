@@ -9,10 +9,16 @@ LEAF stands for Lake Environmental Aquatic Facility. It is a database created fo
 
 | Request Type | Enpoint | Functionality |
 |--|--|--|
+|RESEARCHERS TABLE|
   | POST | /api/researcher/ | create a new researcher |
 | GET | /api/researcher/{researcherId}/ | get one researcher |
 | PUT | /api/researcher/{researcherId}/ | update one researcher |
 | DELETE | /api/researcher/{researcherId}/ | delete one researcher |
+|SECTIONS TABLE|
+| POST |/researcher/{researcherId}/section/ | delete one researcher |
+| GET | /sections/ | get all sections /////////////////////////|
+| GET | /researcher/{researcherId}/sections/ | get all sections that belong to one researcher |
+| DELETE | /researcher/{researcherId}/section/{sectionId}/ | delete a section |
 
 
 
