@@ -25,7 +25,12 @@ LEAF stands for Lake Environmental Aquatic Facility. It is a database created fo
 | POST | /researcher/{researcherId}/student/ | create a student for a researcher |
 | PUT | /researcher/{researcherId}/student/{studentId}/ | update student |
 | DELETE | /researcher/{researcherId}/student/{studentId}/ | delete a student |
-
+|PLANTS TABLE|
+| GET |/plants/ | get ALL plants |
+| GET | /researcher/{researcherId}/section/{sectionId}/plant/ | get plants that are in a section |
+| POST | /researcher/{researcherId}/section/{sectionId}/plant/ | create a plant in a section |
+| PUT | /researcher/{researcherId}/section/{sectionId}/plant/{plantId}/ | update a plant |
+| DELETE | /researcher/{researcherId}/section/{sectionId}/plant/{plantId}/ | delete a plant |
 
 
 ## TOOLS AND TECHNOLOGIES USED
