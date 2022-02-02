@@ -160,12 +160,9 @@ public class ResearcherService {
     }
 
     //GET SECTION LIST FOR A RESEARCHER
-    public List<Section> getAllResearcherSections(Long researcherId){
-        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
-        if(researcher.isPresent()){
-            return researcher.get().getSectionList();
-        }
-        throw new InformationNotFoundException("researcher with id " + researcherId + " not found");
+    public List<Section> getAllResearcherSections(){
+        System.out.println("service calling getAllResearcherSections");
+        return sectionRepository.findAll();
     }
 
 
@@ -348,6 +345,7 @@ public class ResearcherService {
 //    }
 
     public Plant putStudentPlant(Long studentId, Long plantId){
+        System.out.println("Service calling putStudentPlant ==> ");
 
         Optional<Student> studentIdd = studentRepository.findById(studentId);
         if(studentIdd.isPresent()){
@@ -359,7 +357,6 @@ public class ResearcherService {
             throw new InformationNotFoundException("plant with " + plantId + " not found");
         }
         throw  new InformationNotFoundException("student with id " + studentId + " not found");
-
     }
 
 

@@ -82,9 +82,9 @@ public class ResearchController {
     }
 
     //GET SECTION LIST FOR A RESEARCHER
-    @GetMapping("/researcher/{researcherId}/sections/")
-    public List<Section> getAllResearcherSections(@PathVariable (value = "researcherId")Long researcherId){
-        return researcherService.getAllResearcherSections(researcherId);
+    @GetMapping("/sections/")
+    public List<Section> getAllResearcherSections(){
+        return researcherService.getAllResearcherSections();
     }
 
 
@@ -137,7 +137,7 @@ public class ResearchController {
     }
 
     //get plant list
-    @GetMapping("/researcher/{researcherId}/section/{sectionId}/plant")
+    @GetMapping("/researcher/{researcherId}/section/{sectionId}/plant/")
     public List<Plant> getPlantList(@PathVariable(value = "researcherId")Long researcherId,
                                     @PathVariable(value = "sectionId")Long sectionId){
         return researcherService.getPlantList(researcherId, sectionId);
@@ -145,7 +145,7 @@ public class ResearchController {
 
 //update on plant section
 
-    @PutMapping("/researcher/{researcherId}/section/{sectionId}/plant/{plantId}")
+    @PutMapping("/researcher/{researcherId}/section/{sectionId}/plant/{plantId}/")
     public Plant updateSectionPlant(@PathVariable(value = "researcherId")Long researcherId,
                                     @PathVariable(value = "sectionId")Long sectionId,
                                     @PathVariable(value = "plantId")Long plantId,
@@ -165,7 +165,7 @@ public class ResearchController {
     //delete one plant section
 
 
-    @DeleteMapping("/researcher/{researcherId}/section/{sectionId}/plant/{plantId}")
+    @DeleteMapping("/researcher/{researcherId}/section/{sectionId}/plant/{plantId}/")
     public Optional<Plant> deleteSectionPlant(@PathVariable(value = "researcherId")Long researcherId,
                                     @PathVariable(value = "sectionId")Long sectionId,
                                     @PathVariable(value = "plantId")Long plantId){
