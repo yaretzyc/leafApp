@@ -178,10 +178,11 @@ public class ResearchController {
 
 //    @PatchMapping("/student/{studentId}/plant/{plantId}/")
     @PutMapping("/plant/{plantId}/student/{studentId}/")
-    public Student putStudentPlant (@PathVariable(value = "studentId")Long studentId,
+    public Plant putStudentPlant (@PathVariable(value = "studentId")Long studentId,
                                     @PathVariable(value = "plantId")Long plantId){
         return researcherService.putStudentPlant(studentId, plantId);
     }
+
 
 
 

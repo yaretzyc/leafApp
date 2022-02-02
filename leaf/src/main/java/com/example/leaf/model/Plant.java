@@ -125,9 +125,12 @@ public class Plant {
         this.comments = comments;
     }
 
-    public boolean addStudentId(Plant plantIdd) {
-        return student.getPlantList().add(plantIdd);
-    }
+//    public boolean addStudentId(Student studentIdd) {
+//        return ;
+//    }
+
+//"message": "Cannot invoke \"com.example.leaf.model.Student.getPlantList()\" because \"this.student\" is null",
+
 
 //    public void addStudentId(Student studentIdd) {
 //        return student.getPlantList().add(studentIdd);
