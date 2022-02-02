@@ -135,4 +135,7 @@ public class Student {
     public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
     }
+
+//    public void studentAssignedPlant(Plant plant) {
+//    }
 }
