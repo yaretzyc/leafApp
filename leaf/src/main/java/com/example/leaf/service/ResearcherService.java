@@ -338,14 +338,29 @@ public class ResearcherService {
 //    ONE STUDENT CAN HAVE MANY PLANTS ASSIGNED TO THEM BUT
 //    ONLY  PLANT CAN HAVE ONLY ONE STUDENT ID
 
+//    public Plant putStudentPlant(Long studentId, Long plantId){
+//
+//        Student studentIdd = studentRepository.findById(studentId).get();
+//        Plant plantIdd = plantRepository.findById(plantId).get();
+//        plantIdd.setStudent(studentIdd);
+//        return plantRepository.save(plantIdd);
+//
+//    }
+
     public Plant putStudentPlant(Long studentId, Long plantId){
-        Student studentIdd = studentRepository.findById(studentId).get();
-        Plant plantIdd = plantRepository.findById(plantId).get();
-        plantIdd.setStudent(studentIdd);
-        return plantRepository.save(plantIdd);
+
+        Optional<Student> studentIdd = studentRepository.findById(studentId);
+        if(studentIdd.isPresent()){
+            Optional<Plant> plantIdd = plantRepository.findById(plantId);
+            if (plantIdd.isPresent()){
+                plantIdd.get().setStudent(studentIdd.get());
+                return plantRepository.save(plantIdd.get());
+            }
+            throw new InformationNotFoundException("plant with " + plantId + " not found");
+        }
+        throw  new InformationNotFoundException("student with id " + studentId + " not found");
 
     }
-
 
 
 }
