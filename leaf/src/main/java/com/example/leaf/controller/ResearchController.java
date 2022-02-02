@@ -83,8 +83,8 @@ public class ResearchController {
 
     //GET SECTION LIST FOR A RESEARCHER
     @GetMapping("/sections/")
-    public List<Section> getAllResearcherSections(){
-        return researcherService.getAllResearcherSections();
+    public List<Section> getAllSections(){
+        return researcherService.getAllSections();
     }
 
 

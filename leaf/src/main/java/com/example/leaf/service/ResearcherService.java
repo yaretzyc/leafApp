@@ -160,7 +160,7 @@ public class ResearcherService {
     }
 
     //GET SECTION LIST FOR A RESEARCHER
-    public List<Section> getAllResearcherSections(){
+    public List<Section> getAllSections(){
         System.out.println("service calling getAllResearcherSections");
         return sectionRepository.findAll();
     }
