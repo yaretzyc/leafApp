@@ -160,6 +160,13 @@ public class ResearcherService {
     }
 
     //GET SECTION LIST FOR A RESEARCHER
+    public List<Section> getAllResearcherSections(Long researcherId){
+        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
+        if(researcher.isPresent()){
+            return researcher.get().getSectionList();
+        }
+        throw new InformationNotFoundException("researcher with id " + researcherId + " not found");
+    }
 
 
     ///////////////////////////////STUDENTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

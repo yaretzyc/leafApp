@@ -82,6 +82,10 @@ public class ResearchController {
     }
 
     //GET SECTION LIST FOR A RESEARCHER
+    @GetMapping("/researcher/{researcherId}/sections/")
+    public List<Section> getAllResearcherSections(@PathVariable (value = "researcherId")Long researcherId){
+        return researcherService.getAllResearcherSections(researcherId);
+    }
 
 
     ///////////////////////////////STUDENTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
