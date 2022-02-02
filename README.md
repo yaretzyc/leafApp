@@ -15,24 +15,24 @@ LEAF stands for Lake Environmental Aquatic Facility. It is a database created fo
 |2. PUT | /api/researcher/{researcherId}/ | update one researcher |
 |3. DELETE | /api/researcher/{researcherId}/ | delete one researcher |
 |SECTIONS TABLE|
-|4. POST |/researcher/{researcherId}/section/ | delete one researcher |
-|5. GET | /sections/ | get all sections |
-|6. GET | /researcher/{researcherId}/sections/ | get all sections that belong to one researcher |
-|7. DELETE | /researcher/{researcherId}/section/{sectionId}/ | delete a section |
+|4. POST | /api/researcher/{researcherId}/section/ | delete one researcher |
+|5. GET | /api/sections/ | get all sections |
+|6. GET | /api/researcher/{researcherId}/sections/ | get all sections that belong to one researcher |
+|7. DELETE | /api/researcher/{researcherId}/section/{sectionId}/ | delete a section |
 |STUDENTS TABLE|
-|8. GET |/students/ | get ALL students |
-|9. GET | /researcher/{researcherId}/students/ | get students that belong to a researcher |
-|10. POST | /researcher/{researcherId}/student/ | create a student for a researcher |
-|11. PUT | /researcher/{researcherId}/student/{studentId}/ | update student |
-|12. DELETE | /researcher/{researcherId}/student/{studentId}/ | delete a student |
+|8. GET |/api/students/ | get ALL students |
+|9. GET | /api/researcher/{researcherId}/students/ | get students that belong to a researcher |
+|10. POST | /api/researcher/{researcherId}/student/ | create a student for a researcher |
+|11. PUT | /api/researcher/{researcherId}/student/{studentId}/ | update student |
+|12. DELETE | /api/researcher/{researcherId}/student/{studentId}/ | delete a student |
 | PLANTS TABLE |
-|13. GET |/plants/ | get ALL plants |
-|14. GET | /researcher/{researcherId}/section/{sectionId}/plant/ | get plants that are in a section |
-|15. POST | /researcher/{researcherId}/section/{sectionId}/plant/ | create a plant in a section |
-|16. PUT | /researcher/{researcherId}/section/{sectionId}/plant/{plantId}/ | update a plant |
-|17. DELETE | /researcher/{researcherId}/section/{sectionId}/plant/{plantId}/ | delete a plant |
+|13. GET |/api/plants/ | get ALL plants |
+|14. GET | /api/researcher/{researcherId}/section/{sectionId}/plant/ | get plants that are in a section |
+|15. POST | /api/researcher/{researcherId}/section/{sectionId}/plant/ | create a plant in a section |
+|16. PUT | /api/researcher/{researcherId}/section/{sectionId}/plant/{plantId}/ | update a plant |
+|17. DELETE | /api/researcher/{researcherId}/section/{sectionId}/plant/{plantId}/ | delete a plant |
 | PLANTS AND STUDENT TABLE |
-|18. PUT | /plant/{plantId}/student/{studentId}/ | adding a studentId to the plantId |
+|18. PUT | /api/plant/{plantId}/student/{studentId}/ | adding a studentId to the plantId |
 
 ## TOOLS AND TECHNOLOGIES USED
 POSTMAN, JAVA ULTIMATE, POSTGRES DATABASE, GIT, JAVA SPRING BOOT
