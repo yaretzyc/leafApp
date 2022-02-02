@@ -136,6 +136,11 @@ public class Student {
         this.isActive = isActive;
     }
 
+    public void addNewPlant(Plant plant) {
+        plantList.add(plant);
+
+    }
+
 //    public void studentAssignedPlant(Plant plant) {
 //    }
 }

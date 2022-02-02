@@ -28,7 +28,8 @@ public class Plant {
     @Column
     private String comments;
 
-    //map plant and student
+    //many plants are assigned to one student , so there is a list of plants in students entity
+    //one plant can only have one studentid
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "student_id")
@@ -122,5 +123,11 @@ public class Plant {
 
     public void setComments(String comments) {
         this.comments = comments;
+    }
+
+    public void studentAssignedPlant(Student student) {
+//        student.setPlantList();
+
+
     }
 }

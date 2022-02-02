@@ -335,15 +335,19 @@ public class ResearcherService {
 
 
     //////////////assign student to plant with studentId and plantid
-//    public Student putStudentPlant(Long studentId, Long plantId){
-//        Student student = studentRepository.findById(studentId).get();
-//        Plant plant = plantRepository.findById(plantId).get();
-//
-//        //assign student to plant
-//        student.studentAssignedPlant(plant);
-//
-//        return plantRepository.save(student);
-//    }
+//    ONE STUDENT CAN HAVE MANY PLANTS ASSIGNED TO THEM BUT
+//    ONLY  PLANT CAN HAVE ONLY ONE STUDENT ID
+
+    public Student putStudentPlant(Long studentId, Long plantId){
+        Student student = studentRepository.findById(studentId).get();
+
+        Plant plant = plantRepository.findById(plantId).get();
+
+        //assign student to plant
+        student.addNewPlant(plant);
+
+        return studentRepository.save(student);
+    }
 
 
 

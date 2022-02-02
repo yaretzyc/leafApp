@@ -176,6 +176,12 @@ public class ResearchController {
     /////////////////////////////////students and plant\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
+    @PutMapping("/student/{studentId}/plant/{plantId}/")
+    public Student putStudentPlant (@PathVariable(value = "studentId")Long studentId,
+                                    @PathVariable(value = "plantId")Long plantId){
+        return researcherService.putStudentPlant(studentId, plantId);
+    }
+
 
 
 
