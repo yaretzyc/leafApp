@@ -19,6 +19,12 @@ LEAF stands for Lake Environmental Aquatic Facility. It is a database created fo
 | GET | /sections/ | get all sections /////////////////////////|
 | GET | /researcher/{researcherId}/sections/ | get all sections that belong to one researcher |
 | DELETE | /researcher/{researcherId}/section/{sectionId}/ | delete a section |
+|STUDENTS TABLE|
+| GET |/students/ | get ALL students |
+| GET | /researcher/{researcherId}/students/ | get students that belong to a researcher |
+| POST | /researcher/{researcherId}/student/ | create a student for a researcher |
+| PUT | /researcher/{researcherId}/student/{studentId}/ | update student |
+| DELETE | /researcher/{researcherId}/student/{studentId}/ | delete a student |
 
 
 
