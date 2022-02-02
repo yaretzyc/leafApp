@@ -16,7 +16,7 @@ LEAF stands for Lake Environmental Aquatic Facility. It is a database created fo
 | DELETE | /api/researcher/{researcherId}/ | delete one researcher |
 |SECTIONS TABLE|
 | POST |/researcher/{researcherId}/section/ | delete one researcher |
-| GET | /sections/ | get all sections /////////////////////////|
+| GET | /sections/ | get all sections |
 | GET | /researcher/{researcherId}/sections/ | get all sections that belong to one researcher |
 | DELETE | /researcher/{researcherId}/section/{sectionId}/ | delete a section |
 |STUDENTS TABLE|
@@ -25,13 +25,14 @@ LEAF stands for Lake Environmental Aquatic Facility. It is a database created fo
 | POST | /researcher/{researcherId}/student/ | create a student for a researcher |
 | PUT | /researcher/{researcherId}/student/{studentId}/ | update student |
 | DELETE | /researcher/{researcherId}/student/{studentId}/ | delete a student |
-|PLANTS TABLE|
+| PLANTS TABLE |
 | GET |/plants/ | get ALL plants |
 | GET | /researcher/{researcherId}/section/{sectionId}/plant/ | get plants that are in a section |
 | POST | /researcher/{researcherId}/section/{sectionId}/plant/ | create a plant in a section |
 | PUT | /researcher/{researcherId}/section/{sectionId}/plant/{plantId}/ | update a plant |
 | DELETE | /researcher/{researcherId}/section/{sectionId}/plant/{plantId}/ | delete a plant |
-
+| PLANTS AND STUDENT TABLE |
+| PUT | /plant/{plantId}/student/{studentId}/ | adding a studentId to the plantId |
 
 ## TOOLS AND TECHNOLOGIES USED
 POSTMAN, JAVA ULTIMATE, POSTGRES DATABASE, GIT, JAVA SPRING BOOT
