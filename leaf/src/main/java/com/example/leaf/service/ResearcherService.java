@@ -340,26 +340,11 @@ public class ResearcherService {
 
     public Plant putStudentPlant(Long studentId, Long plantId){
         Student studentIdd = studentRepository.findById(studentId).get();
-
         Plant plantIdd = plantRepository.findById(plantId).get();
-
-        //assign student to plant
-//        student.addNewPlant(plant);
-//        studentIdd.addStudentId(plantIdd);
-        //        plant.addStudentId(student);
-//    //    plantIdd.addStudentId(studentIdd);
-//
-//      //  return studentRepository.save(studentIdd);
-//        return plantRepository.save(plantIdd);
-
         plantIdd.setStudent(studentIdd);
-//        plantObj.setSection(section.get());
         return plantRepository.save(plantIdd);
-//        return plantRepository.save(plantObj);
-
 
     }
-    //does not save in the student
 
 
 
