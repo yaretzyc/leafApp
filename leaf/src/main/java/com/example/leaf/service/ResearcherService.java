@@ -164,6 +164,10 @@ public class ResearcherService {
 
     ///////////////////////////////STUDENTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+    public List<Student> getAllStudents(){
+        System.out.println("Service calling getAllStudents ==> ");
+        return studentRepository.findAll();
+    }
 
     public Student createResearcherStudent(Long researcherId, Student studentObj){
         System.out.println("service calling createResearcherStudent ==>");
