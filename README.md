@@ -1,1 +1,16 @@
 # leafApp
+
+## INTRO
+
+## ENTITY RELATIONSHIP DIAGRAMA (ERD):
+
+## ENDPOINTS
+
+## TOOLS USED
+
+## USER STORIES
+
+
+
+## Challenger
+- 
