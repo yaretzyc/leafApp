@@ -175,6 +175,16 @@ public class ResearcherService {
         System.out.println("Service calling getAllStudents ==> ");
         return studentRepository.findAll();
     }
+    public List<Student> getAllResearcherStudents(Long researcherId){
+        System.out.println("service calling getAllResearcherStudents ==>");
+        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
+        if(researcher.isPresent()){
+            return researcher.get().getStudentList();
+
+        }else{
+            throw new InformationNotFoundException("researcher with id " + researcherId + "not found");
+        }
+    }
 
     public Student createResearcherStudent(Long researcherId, Student studentObj){
         System.out.println("service calling createResearcherStudent ==>");

@@ -95,6 +95,12 @@ public class ResearchController {
         return researcherService.getAllStudents();
     }
 
+    //get all students under a researcher
+    @GetMapping("/researcher/{researcherId}/students/")
+    public List<Student> getAllResearcherStudents(@PathVariable(value = "researcherId")Long researcherId){
+        return researcherService.getAllResearcherStudents(researcherId);
+    }
+
     //CREATE STUDENT WITH RESEARCHERID
     @PostMapping("/researcher/{researcherId}/student/")
     public Student createResearcherStudent(@PathVariable(value = "researcherId")Long researcherId,
