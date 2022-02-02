@@ -7,7 +7,19 @@ LEAF stands for Lake Environmental Aquatic Facility. It is a database created fo
 
 ## ENDPOINTS
 
-## TOOLS USED
+| Request Type | Enpoint | Functionality |
+|--|--|--|
+  | POST | /api/researcher/ | create a new researcher |
+| GET | /api/researcher/{researcherId}/ | get one researcher |
+| PUT | /api/researcher/{researcherId}/ | update one researcher |
+| DELETE | /api/researcher/{researcherId}/ | delete one researcher |
+
+
+
+## TOOLS AND TECHNOLOGIES USED
+POSTMAN, JAVA ULTIMATE, POSTGRES DATABASE, GIT, JAVA SPRING BOOT
+
+
 
 ## USER STORIES
 | | 
