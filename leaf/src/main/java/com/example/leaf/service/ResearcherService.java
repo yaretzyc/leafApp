@@ -339,15 +339,21 @@ public class ResearcherService {
 //    ONLY  PLANT CAN HAVE ONLY ONE STUDENT ID
 
     public Student putStudentPlant(Long studentId, Long plantId){
-        Student student = studentRepository.findById(studentId).get();
+        Student studentIdd = studentRepository.findById(studentId).get();
 
-        Plant plant = plantRepository.findById(plantId).get();
+        Plant plantIdd = plantRepository.findById(plantId).get();
 
         //assign student to plant
-        student.addNewPlant(plant);
+//        student.addNewPlant(plant);
+//        studentIdd.addStudentId(plantIdd);
+        plantIdd.addStudentId(plantIdd);
 
-        return studentRepository.save(student);
+//        plant.addStudentId(student);
+
+        return studentRepository.save(studentIdd);
+//        return plantRepository.save(plant);
     }
+    //does not save in the student
 
 
 

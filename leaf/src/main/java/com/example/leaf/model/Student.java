@@ -136,11 +136,20 @@ public class Student {
         this.isActive = isActive;
     }
 
-    public void addNewPlant(Plant plant) {
-        plantList.add(plant);
-
-    }
-
-//    public void studentAssignedPlant(Plant plant) {
+//    public void addStudentId(Plant plantIdd) {
+////        return plantIdd.
+//
 //    }
+
+//    public void addNewPlant(Plant plant) {
+//        plantList.add(plant);
+//    }
+
+
+//    public boolean addStudentId(Plant plantIdd) {
+////        return getPlantList().add(plantIdd);
+//        return plantIdd.setStudent();
+
+//    }
+
 }

@@ -125,9 +125,20 @@ public class Plant {
         this.comments = comments;
     }
 
-    public void studentAssignedPlant(Student student) {
-//        student.setPlantList();
-
-
+    public boolean addStudentId(Plant plantIdd) {
+        return student.getPlantList().add(plantIdd);
     }
+
+//    public void addStudentId(Student studentIdd) {
+//        return student.getPlantList().add(studentIdd);
+////                .setStudent(studentIdd);
+//    }
+
+
+//    public void studentAssignedPlant(Student student) {
+////        student.setPlantList();
+//
+//
+//    }
+
 }
