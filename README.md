@@ -74,6 +74,6 @@ POSTMAN, JAVA ULTIMATE, POSTGRES DATABASE, GIT, JAVA SPRING BOOT, lucidCharo for
 
 
 ## FUTURE CONSIDERATIONS
-- One startegy to 
+- Since this database can only be used at the local level e.g(one research plant facility) this can be changed to be used with individual researchers who want to manage their research profiles. So, change this to an application that uses JSON Web Tokens in Spring Security to power user authentication. In other words, a researcher can create a profile with email and password and login and navagite the API endpoints.
 
 
