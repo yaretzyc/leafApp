@@ -58,7 +58,7 @@ public class PlantController {
 
 
 //UPDATE THE PLANT STUDENT_ID COLUMN
-    @PatchMapping("/plant/{plantId}/student/{studentId}/")
+    @PutMapping("/plant/{plantId}/student/{studentId}/")
     public Plant putStudentPlant (@PathVariable(value = "studentId")Long studentId,
                                   @PathVariable(value = "plantId")Long plantId){
         return plantService.putStudentPlant(studentId, plantId);
