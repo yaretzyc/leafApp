@@ -27,7 +27,7 @@ public class ResearcherService {
         Researcher researcher  = researcherRepository.findByEmail(researcherObj.getEmail());
 
         if(researcher != null){ //researcher NOT NULL MEANS IT EXISTS ; IF IT IS NULL MEANS DOES NOT EXISTS
-            throw new InformationExistException("researcher with email" + researcher.getEmail()  + " already exists");
+            throw new InformationExistException("researcher with email " + researcher.getEmail()  + " already exists");
         }else{
             return researcherRepository.save(researcherObj); //if  null then does not exist than save the data
         }

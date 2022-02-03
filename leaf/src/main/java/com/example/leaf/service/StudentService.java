@@ -1,5 +1,6 @@
 package com.example.leaf.service;
 
+import com.example.leaf.exceptions.InformationExistException;
 import com.example.leaf.exceptions.InformationNotFoundException;
 import com.example.leaf.model.Researcher;
 import com.example.leaf.model.Student;
@@ -43,19 +44,19 @@ public class StudentService {
             return researcher.get().getStudentList();
 
         }else{
-            throw new InformationNotFoundException("researcher with id " + researcherId + "not found");
+            throw new InformationNotFoundException("researcher with id " + researcherId + " not found");
         }
     }
 
 //CREATE a student
     public Student createResearcherStudent(Long researcherId, Student studentObj){
         System.out.println("service calling createResearcherStudent ==>");
-        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
-        if(researcher.isPresent()){
-            studentObj.setResearcher(researcher.get());
+        //check if student email already exists or not
+        Student student = studentRepository.findByEmail(studentObj.getEmail());
+        if(student != null){
+            throw new InformationExistException("student with email " + student.getEmail() + " already exists");
+        }else {
             return studentRepository.save(studentObj);
-        }else{
-            throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
         }
     }
 
