@@ -62,14 +62,14 @@ For this project their are four models: researchers, students, sections, and pla
 ## TOOLS AND TECHNOLOGIES USED
 POSTMAN, JAVA ULTIMATE, POSTGRES DATABASE, GIT, JAVA SPRING BOOT, lucidCharo for erd diagram
 
-|      |           |      |
+|Name      |           | Purpose     |
 | -------- | -------------- |--------------|
-| POSTMAN |  ![img.png](images/postman.png)|
-| INTELLIJI IDEA ULTIMATE |  ![img.png](images/intelliji.png)|
-| POSTGRES DATABASE | ![img.png](images/postgresql.png) |
-| GIT | ![img.png](images/git.png)|
-| JAVA SPRING BOOT | ![img.png](images/javaspringboot.png)|
-| LUCIDCHART | ![img.png](images/lucidchart_logo.png) |
+| Postman |  ![img.png](images/postman.png)| Build API Requests
+| Intellij Idea Ultimate |  ![img.png](images/intelliji.png)| Code Editor for Java Spring Boot Project
+| PostgreSQL Database | ![img.png](images/postgresql.png) | Database Mangement system
+| GIT | ![img.png](images/git.png)| Version Control System
+| Java Spring Boot | ![img.png](images/javaspringboot.png)| Develop the project's web application using Spring Frameworks
+| Lucidchart | ![img.png](images/lucidchart_logo.png) | Create the Entity Relationship Diagram
 
 
 
