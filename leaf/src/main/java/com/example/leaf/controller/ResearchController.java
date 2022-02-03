@@ -87,44 +87,44 @@ public class ResearchController {
 //        return researcherService.getAllSections();
 //    }
 //
-
-    ///////////////////////////////STUDENTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-    @GetMapping("/students/")
-    public List<Student> getAllStudents(){
-        return researcherService.getAllStudents();
-    }
-
-    //get all students under a researcher
-    @GetMapping("/researcher/{researcherId}/students/")
-    public List<Student> getAllResearcherStudents(@PathVariable(value = "researcherId")Long researcherId){
-        return researcherService.getAllResearcherStudents(researcherId);
-    }
-
-    //CREATE STUDENT WITH RESEARCHERID
-    @PostMapping("/researcher/{researcherId}/student/")
-    public Student createResearcherStudent(@PathVariable(value = "researcherId")Long researcherId,
-                                           @RequestBody Student studentObj){
-        return researcherService.createResearcherStudent(researcherId, studentObj);
-    }
-
-    //UPDATE
-    @PutMapping("/researcher/{researcherId}/student/{studentId}/")
-    public Student updateResearcherStudent(@PathVariable (value = "researcherId")Long researcherId,
-                                           @PathVariable(value = "studentId")Long studentId,
-                                           @RequestBody Student studentObj){
-        return researcherService.updateResearcherStudent(researcherId, studentId, studentObj);
-    }
-
-    //DELETE student ///
-    @DeleteMapping("/researcher/{researcherId}/student/{studentId}/")
-    public Optional<Student> deleteResearcherStudent(@PathVariable (value= "researcherId")Long researcherId,
-                                                     @PathVariable(value = "studentId")Long studentId){
-        return researcherService.deleteResearcherStudent(researcherId, studentId);
-    }
-
-
-    //student get all plants list
+//
+//    ///////////////////////////////STUDENTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//
+//    @GetMapping("/students/")
+//    public List<Student> getAllStudents(){
+//        return researcherService.getAllStudents();
+//    }
+//
+//    //get all students under a researcher
+//    @GetMapping("/researcher/{researcherId}/students/")
+//    public List<Student> getAllResearcherStudents(@PathVariable(value = "researcherId")Long researcherId){
+//        return researcherService.getAllResearcherStudents(researcherId);
+//    }
+//
+//    //CREATE STUDENT WITH RESEARCHERID
+//    @PostMapping("/researcher/{researcherId}/student/")
+//    public Student createResearcherStudent(@PathVariable(value = "researcherId")Long researcherId,
+//                                           @RequestBody Student studentObj){
+//        return researcherService.createResearcherStudent(researcherId, studentObj);
+//    }
+//
+//    //UPDATE
+//    @PutMapping("/researcher/{researcherId}/student/{studentId}/")
+//    public Student updateResearcherStudent(@PathVariable (value = "researcherId")Long researcherId,
+//                                           @PathVariable(value = "studentId")Long studentId,
+//                                           @RequestBody Student studentObj){
+//        return researcherService.updateResearcherStudent(researcherId, studentId, studentObj);
+//    }
+//
+//    //DELETE student ///
+//    @DeleteMapping("/researcher/{researcherId}/student/{studentId}/")
+//    public Optional<Student> deleteResearcherStudent(@PathVariable (value= "researcherId")Long researcherId,
+//                                                     @PathVariable(value = "studentId")Long studentId){
+//        return researcherService.deleteResearcherStudent(researcherId, studentId);
+//    }
+//
+//
+//    //student get all plants list
 
 /////////////////////////////////// PLANTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //researchid, sectionid, ==> create new plant
