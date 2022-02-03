@@ -1,8 +1,11 @@
-# LEAF Database/ERD SEI 2 PROJECT
+# LEAF Database/ERD SEI PROJECT 2
 
 ## INTRO
 
 LEAF stands for Lake Environmental Aquatic Facility. It is a database created for individual plant research facilites. This idea came about from a previous work experience working as a research assistant for a team of reasearchers in the Army Corps of Engineers. 
+
+For this project their are four models: researchers, students, sections, and plants.
+
 
 ## USER STORIES
 | | 
@@ -67,5 +70,10 @@ POSTMAN, JAVA ULTIMATE, POSTGRES DATABASE, GIT, JAVA SPRING BOOT, lucidCharo for
 
 
 ## CHALLENGES
-- The plants table 2 foregin keys
-## FUTURE IMPROVEMENTS
+- One challenge that I faced was my plants table that had 2 foregin keys. The 2 foregin keys where student_id and section_id. The plants model has two Many to One entity relationship with the students and sections models. A student can have many plants that they are in charge of maintaing and a section has many types of plants. The issue came about after creating a plant record (row) the student_id was null. So, to change the null value and assign it an existing student_id number, I created a method in the PlantService called putStudentPlant where I retrieved both ids (plant and student) and then used setStudent() and added the studentId using get() method. Thus, I was able to change the null value to a student_id number.
+
+
+## FUTURE CONSIDERATIONS
+- One startegy to 
+
+
