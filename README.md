@@ -27,7 +27,54 @@ For this project there are four models: researchers, students, sections, and pla
 ![img.png](images/lucidchart.png)
 ![img.png](images/visualDiagram.png)
 
+## DEPENDENCIES POM.XML
+```
 
+   <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+    </dependencies>
+
+
+
+```
 ## ENDPOINTS
 
 | Request Type | Enpoint | Functionality |
@@ -64,12 +111,12 @@ POSTMAN, JAVA ULTIMATE, POSTGRES DATABASE, GIT, JAVA SPRING BOOT, lucidCharo for
 
 |Name      |           | Purpose     |
 | -------- | -------------- |--------------|
-| Postman |  ![img.png](images/postman.png)| Build API Requests
-| Intellij Idea Ultimate |  ![img.png](images/intelliji.png)| Code Editor for Java Spring Boot Project
-| PostgreSQL Database | ![img.png](images/postgresql.png) | Database Mangement system
-| GIT | ![img.png](images/git.png)| Version Control System
-| Java Spring Boot | ![img.png](images/javaspringboot.png)| Develop the project's web application using Spring Frameworks
-| Lucidchart | ![img.png](images/lucidchart_logo.png) | Create the Entity Relationship Diagram
+| Postman |  <p align="center"><img alt="postman_logo" height="100" src="images/postman.png"/> </p> | Build API Requests
+| Intellij Idea 2021.3.1 |   <p align="center"><img alt="intellij_logo" height="100" src="images/intelliji.png"/>| Code Editor for Java Spring Boot Project
+| PostgreSQL Database | <p align="center"><img alt="postgresql_logo" height="100" src="images/postgresql.png"/> | Database Mangement system
+| GIT | <p align="center"><img alt="git_logo" height="100" src="images/git.png"/>| Version Control System
+| Java Spring Boot | <p align="center"><img alt="java spring boot logo" height="100" src="images/javaspringboot.png"/>| Develop the project's web application using Spring Frameworks
+| Lucidchart |  <p align="center"><img alt="lucidchart_logo" height="100" src="images/lucidchart_logo.png"/> | Create the Entity Relationship Diagram
 
 
 
