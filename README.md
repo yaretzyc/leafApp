@@ -36,7 +36,17 @@ LEAF stands for Lake Environmental Aquatic Facility. It is a database created fo
 |20. PUT | /api/plant/{plantId}/student/{studentId}/ | adding a studentId to the plantId |
 
 ## TOOLS AND TECHNOLOGIES USED
-POSTMAN, JAVA ULTIMATE, POSTGRES DATABASE, GIT, JAVA SPRING BOOT
+POSTMAN, JAVA ULTIMATE, POSTGRES DATABASE, GIT, JAVA SPRING BOOT, lucidCharo for erd diagram
+
+|      |           |      |
+| -------- | -------------- |--------------|
+| POSTMAN |  |
+| JAVA ULTIMATE |  |
+| POSTGRES DATABASE |  |
+| GIT |  |
+| JAVA SPRING BOOT |  |
+| LUCIDCHART |  |
+| MARKDOWN | ![Markdown Logo](https://markdown-here.com/img/icon256.png) | for readme.md file
 
 
 
