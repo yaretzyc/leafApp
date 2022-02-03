@@ -4,7 +4,22 @@
 
 LEAF stands for Lake Environmental Aquatic Facility. It is a database created for individual plant research facilites. This idea came about from a previous work experience working as a research assistant for a team of reasearchers in the Army Corps of Engineers. 
 
+## USER STORIES
+| | 
+|:---|
+|1.	As a user, I would like to view all sections that belong to a researcher.
+|2.	As a user, I would like to view all plants that are in a section.
+|3.	As a user, I would like to view what students are responsible for which plants.
+|4.	As a user, I would like to view which student works under which researcher.
+|5.	As a user, I would like to view which sections belong to a researcher.
+|6.	As a user, I would like to delete records in my database for the student, researcher, plant, and section entities.
+|7.	As a user, I would like to create a record in my database for the student, researcher, plant, and section entities.
+|8. As a user, I would like to update my database for the student, researcher, plant, and section.
+
 ## ENTITY RELATIONSHIP DIAGRAMA (ERD):
+![img.png](images/lucidchart.png)
+![img.png](images/visualDiagram.png)
+
 
 ## ENDPOINTS
 
@@ -36,32 +51,18 @@ LEAF stands for Lake Environmental Aquatic Facility. It is a database created fo
 | PLANTS AND STUDENT TABLE |
 |20. PUT | /api/plant/{plantId}/student/{studentId}/ | adding a studentId to the plantId |
 
+
 ## TOOLS AND TECHNOLOGIES USED
 POSTMAN, JAVA ULTIMATE, POSTGRES DATABASE, GIT, JAVA SPRING BOOT, lucidCharo for erd diagram
 
 |      |           |      |
 | -------- | -------------- |--------------|
-| POSTMAN |  |
-| JAVA ULTIMATE |  |
-| POSTGRES DATABASE |  |
-| GIT |  |
-| JAVA SPRING BOOT |  |
-| LUCIDCHART |  |
-| MARKDOWN | ![Markdown Logo](https://markdown-here.com/img/icon256.png) | for readme.md file
-
-
-
-## USER STORIES
-| | 
-|:---|
-|1.	As a user, I would like to view all sections that belong to a researcher.
-|2.	As a user, I would like to view all plants that are in a section.
-|3.	As a user, I would like to view what students are responsible for which plants.
-|4.	As a user, I would like to view which student works under which researcher.
-|5.	As a user, I would like to view which sections belong to a researcher.
-|6.	As a user, I would like to delete records in my database for the student, researcher, plant, and section entities.
-|7.	As a user, I would like to create a record in my database for the student, researcher, plant, and section entities.
-|8. As a user, I would like to update my database for the student, researcher, plant, and section.
+| POSTMAN |  ![img.png](images/postman.png)|
+| INTELLIJI IDEA ULTIMATE |  ![img.png](images/intelliji.png)|
+| POSTGRES DATABASE | ![img.png](images/postgresql.png) |
+| GIT | ![img.png](images/git.png)|
+| JAVA SPRING BOOT | ![img.png](images/javaspringboot.png)|
+| LUCIDCHART | ![img.png](images/lucidchart_logo.png) |
 
 
 
