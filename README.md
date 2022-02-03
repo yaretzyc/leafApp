@@ -1,7 +1,8 @@
-# LEAF Database/ERD
+# LEAF Database/ERD SEI 2 PROJECT
 
 ## INTRO
-LEAF stands for Lake Environmental Aquatic Facility. It is a database created for individual plant research facilites.
+
+LEAF stands for Lake Environmental Aquatic Facility. It is a database created for individual plant research facilites. This idea came about from a previous work experience working as a research assistant for a team of reasearchers in the Army Corps of Engineers. 
 
 ## ENTITY RELATIONSHIP DIAGRAMA (ERD):
 
@@ -64,5 +65,6 @@ POSTMAN, JAVA ULTIMATE, POSTGRES DATABASE, GIT, JAVA SPRING BOOT, lucidCharo for
 
 
 
-## Challenges
+## CHALLENGES
 - The plants table 2 foregin keys
+## FUTURE IMPROVEMENTS
