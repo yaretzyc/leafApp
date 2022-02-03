@@ -126,63 +126,63 @@ public class ResearchController {
 //
 //    //student get all plants list
 
-/////////////////////////////////// PLANTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-//researchid, sectionid, ==> create new plant
-
-    @PostMapping("/researcher/{researcherId}/section/{sectionId}/plant/")
-    public Plant createSectionPlant(@PathVariable(value = "researcherId")Long researcherId,
-                                    @PathVariable(value = "sectionId")Long sectionId,
-                                    @RequestBody Plant plantObj){
-        return researcherService.createSectionPlant(researcherId, sectionId, plantObj);
-    }
-
-    //get plant list
-    @GetMapping("/researcher/{researcherId}/section/{sectionId}/plant/")
-    public List<Plant> getPlantList(@PathVariable(value = "researcherId")Long researcherId,
-                                    @PathVariable(value = "sectionId")Long sectionId){
-        return researcherService.getPlantList(researcherId, sectionId);
-    }
-
-//update on plant section
-
-    @PutMapping("/researcher/{researcherId}/section/{sectionId}/plant/{plantId}/")
-    public Plant updateSectionPlant(@PathVariable(value = "researcherId")Long researcherId,
-                                    @PathVariable(value = "sectionId")Long sectionId,
-                                    @PathVariable(value = "plantId")Long plantId,
-                                    @RequestBody Plant plantObj){
-        return researcherService.updateSectionPlant(researcherId, sectionId, plantId, plantObj);
-    }
-
-
-    //getallplants
-    @GetMapping("/plants/")
-    public List<Plant> getAllPlantList(){
-        return researcherService.getAllPlantList();
-    }
-
-
-
-    //delete one plant section
-
-
-    @DeleteMapping("/researcher/{researcherId}/section/{sectionId}/plant/{plantId}/")
-    public Optional<Plant> deleteSectionPlant(@PathVariable(value = "researcherId")Long researcherId,
-                                    @PathVariable(value = "sectionId")Long sectionId,
-                                    @PathVariable(value = "plantId")Long plantId){
-        return researcherService.deleteSectionPlant(researcherId, sectionId, plantId);
-    }
-
+///////////////////////////////////// PLANTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+////researchid, sectionid, ==> create new plant
+//
+//    @PostMapping("/researcher/{researcherId}/section/{sectionId}/plant/")
+//    public Plant createSectionPlant(@PathVariable(value = "researcherId")Long researcherId,
+//                                    @PathVariable(value = "sectionId")Long sectionId,
+//                                    @RequestBody Plant plantObj){
+//        return researcherService.createSectionPlant(researcherId, sectionId, plantObj);
+//    }
+//
+//    //get plant list
+//    @GetMapping("/researcher/{researcherId}/section/{sectionId}/plant/")
+//    public List<Plant> getPlantList(@PathVariable(value = "researcherId")Long researcherId,
+//                                    @PathVariable(value = "sectionId")Long sectionId){
+//        return researcherService.getPlantList(researcherId, sectionId);
+//    }
+//
+////update on plant section
+//
+//    @PutMapping("/researcher/{researcherId}/section/{sectionId}/plant/{plantId}/")
+//    public Plant updateSectionPlant(@PathVariable(value = "researcherId")Long researcherId,
+//                                    @PathVariable(value = "sectionId")Long sectionId,
+//                                    @PathVariable(value = "plantId")Long plantId,
+//                                    @RequestBody Plant plantObj){
+//        return researcherService.updateSectionPlant(researcherId, sectionId, plantId, plantObj);
+//    }
+//
+//
+//    //getallplants
+//    @GetMapping("/plants/")
+//    public List<Plant> getAllPlantList(){
+//        return researcherService.getAllPlantList();
+//    }
+//
+//
+//
+//    //delete one plant section
+//
+//
+//    @DeleteMapping("/researcher/{researcherId}/section/{sectionId}/plant/{plantId}/")
+//    public Optional<Plant> deleteSectionPlant(@PathVariable(value = "researcherId")Long researcherId,
+//                                    @PathVariable(value = "sectionId")Long sectionId,
+//                                    @PathVariable(value = "plantId")Long plantId){
+//        return researcherService.deleteSectionPlant(researcherId, sectionId, plantId);
+//    }
+//
 
     /////////////////////////////////students and plant\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
-//    @PatchMapping("/student/{studentId}/plant/{plantId}/")
-    @PutMapping("/plant/{plantId}/student/{studentId}/")
-    public Plant putStudentPlant (@PathVariable(value = "studentId")Long studentId,
-                                    @PathVariable(value = "plantId")Long plantId){
-        return researcherService.putStudentPlant(studentId, plantId);
-    }
-
+////    @PatchMapping("/student/{studentId}/plant/{plantId}/")
+//    @PutMapping("/plant/{plantId}/student/{studentId}/")
+//    public Plant putStudentPlant (@PathVariable(value = "studentId")Long studentId,
+//                                    @PathVariable(value = "plantId")Long plantId){
+//        return researcherService.putStudentPlant(studentId, plantId);
+//    }
+//
 
 
 
