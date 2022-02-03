@@ -11,7 +11,13 @@ For this project there are four models: researchers, students, sections, and pla
 - **plants model**: Information on the plants in a specific section such as, plantType (terrestrial or aquatic), name, number of pots, isHealthy, comments, section_id, student_id.
 
 #### CONTENTS
-[User Stroies](#USER-STORIES)
+- [User Stories](#USER-STORIES)
+- [ERD](ENTITY-RELATIONSHIP-DIAGRAMA-(ERD):)
+- [Dependencies](DEPENDENCIES-POM.XML)
+- [Endpoints](ENDPOINTS)
+- [Technologies](TOOLS-AND-TECHNOLOGIES-USED)
+- [Project Challenges](CHALLENGES)
+- [Future Improvements](FUTURE-IMPROVEMENTS)
 
 
 ## USER STORIES
@@ -131,7 +137,7 @@ POSTMAN, JAVA ULTIMATE, POSTGRES DATABASE, GIT, JAVA SPRING BOOT, lucidCharo for
 - One challenge that I faced was my plants table that had 2 foregin keys. The 2 foregin keys where student_id and section_id. The plants model has two Many to One entity relationship with the students and sections models. A student can have many plants that they are in charge of maintaing and a section has many types of plants. The issue came about after creating a plant record (row) the student_id was null. So, to change the null value and assign it an existing student_id number, I created a method in the PlantService called putStudentPlant where I retrieved both ids (plant and student) and then used setStudent() and added the studentId using get() method. Thus, I was able to change the null value to a student_id number.
 
 
-## FUTURE CONSIDERATIONS
+## FUTURE IMPROVEMENTS
 - Since this database can only be used at the local level e.g(one research plant facility) this can be changed to be used with individual researchers who want to manage their research profiles. So, change this to an application that uses JSON Web Tokens in Spring Security to power user authentication. In other words, a researcher can create a profile with email and password and login and navagite the API endpoints.
 
 
