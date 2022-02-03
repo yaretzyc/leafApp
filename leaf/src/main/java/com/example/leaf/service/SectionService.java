@@ -5,7 +5,6 @@ import com.example.leaf.model.Researcher;
 import com.example.leaf.model.Section;
 import com.example.leaf.repository.ResearcherRepository;
 import com.example.leaf.repository.SectionRepository;
-import com.example.leaf.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,8 +31,7 @@ public class SectionService {
 
     ///////////////////////////////////////////////SECTIONS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-
-    //creating a section using the researcherId
+//CREATE a section using the researcherId
     public Section createResearcherSection(Long researcherId, Section sectionObj){
         System.out.println("Service calling createResearcherSection ==> ");
 
@@ -48,7 +46,7 @@ public class SectionService {
 
     }
 
-    //get list of sections for a researcher
+//get list of sections for a researcher
     public List<Section> getResearcherSectionList(Long researcherId){
         System.out.println("Service calling getResearcherSectionList ==> ");
 
@@ -60,7 +58,7 @@ public class SectionService {
         }
     }
 
-    //delete a section for a researcher
+//DELETE sectionid with researcherid
     public Optional<Section> deleteResearcherSection(Long researcherId, Long sectionId){
         System.out.println("service calling deleteResearcherSection ==> ");
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
@@ -78,7 +76,7 @@ public class SectionService {
 
     }
 
-    //GET SECTION LIST FOR A RESEARCHER
+//GET SECTION LIST FOR A RESEARCHER
     public List<Section> getAllSections(){
         System.out.println("service calling getAllResearcherSections");
         return sectionRepository.findAll();

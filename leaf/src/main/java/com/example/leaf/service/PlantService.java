@@ -47,6 +47,8 @@ public class PlantService {
         this.studentRepository = studentRepository;
     }
 
+    /////////////////////////////////// PLANTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//CREATE PLANT
     public Plant createSectionPlant(Long researcherId, Long sectionId, Plant plantObj){
         System.out.println("service calling createSectionPlant ==>");
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
@@ -65,7 +67,7 @@ public class PlantService {
     }
 
 
-    //getPlantList
+//GET PlantList with RESEARCHERID
     public List<Plant> getPlantList(Long researcherId, Long sectionId){
         System.out.println("service calling getPlantList ==>");
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
@@ -80,7 +82,7 @@ public class PlantService {
         }
     }
 
-    //update the plant
+//UPDATE the plant
     public Plant updateSectionPlant(Long researcherId, Long sectionId, Long plantId, Plant plantObj) {
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
         if (researcher.isPresent()) {
@@ -110,12 +112,13 @@ public class PlantService {
     }
 
 
+//GET ALL PLANTS
     public List<Plant> getAllPlantList(){
         System.out.println("Service calling getAllPlantList ==> ");
         return plantRepository.findAll();
     }
 
-
+//DELETE PLANT
     public Optional<Plant> deleteSectionPlant(Long researcherId, Long sectionId, Long plantId){
         System.out.println("service calling deleteSectionPlant ==>");
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
@@ -137,20 +140,7 @@ public class PlantService {
 
     }
 
-
-    //////////////assign student to plant with studentId and plantid
-//    ONE STUDENT CAN HAVE MANY PLANTS ASSIGNED TO THEM BUT
-//    ONLY  PLANT CAN HAVE ONLY ONE STUDENT ID
-
-//    public Plant putStudentPlant(Long studentId, Long plantId){
-//
-//        Student studentIdd = studentRepository.findById(studentId).get();
-//        Plant plantIdd = plantRepository.findById(plantId).get();
-//        plantIdd.setStudent(studentIdd);
-//        return plantRepository.save(plantIdd);
-//
-//    }
-
+//UPDATE THE PLANT STUDENT_ID COLUMN
     public Plant putStudentPlant(Long studentId, Long plantId){
         System.out.println("Service calling putStudentPlant ==> ");
 

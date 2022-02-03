@@ -16,8 +16,7 @@ public class PlantController {
     public PlantService plantService;
 
     /////////////////////////////////// PLANTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-//researchid, sectionid, ==> create new plant
-
+//CREATE PLANT
     @PostMapping("/researcher/{researcherId}/section/{sectionId}/plant/")
     public Plant createSectionPlant(@PathVariable(value = "researcherId")Long researcherId,
                                     @PathVariable(value = "sectionId")Long sectionId,
@@ -25,15 +24,14 @@ public class PlantController {
         return plantService.createSectionPlant(researcherId, sectionId, plantObj);
     }
 
-    //get plant list
+//GET PlantList with RESEARCHERID
     @GetMapping("/researcher/{researcherId}/section/{sectionId}/plant/")
     public List<Plant> getPlantList(@PathVariable(value = "researcherId")Long researcherId,
                                     @PathVariable(value = "sectionId")Long sectionId){
         return plantService.getPlantList(researcherId, sectionId);
     }
 
-//update on plant section
-
+//UPDATE THE PLANT
     @PutMapping("/researcher/{researcherId}/section/{sectionId}/plant/{plantId}/")
     public Plant updateSectionPlant(@PathVariable(value = "researcherId")Long researcherId,
                                     @PathVariable(value = "sectionId")Long sectionId,
@@ -43,17 +41,14 @@ public class PlantController {
     }
 
 
-    //getallplants
+//GET PlantList with RESEARCHERID
     @GetMapping("/plants/")
     public List<Plant> getAllPlantList(){
         return plantService.getAllPlantList();
     }
 
 
-
-    //delete one plant section
-
-
+//DELETE PLANT
     @DeleteMapping("/researcher/{researcherId}/section/{sectionId}/plant/{plantId}/")
     public Optional<Plant> deleteSectionPlant(@PathVariable(value = "researcherId")Long researcherId,
                                               @PathVariable(value = "sectionId")Long sectionId,
@@ -62,17 +57,12 @@ public class PlantController {
     }
 
 
-
-
-    //    @PatchMapping("/student/{studentId}/plant/{plantId}/")
-    @PutMapping("/plant/{plantId}/student/{studentId}/")
+//UPDATE THE PLANT STUDENT_ID COLUMN
+    @PatchMapping("/plant/{plantId}/student/{studentId}/")
     public Plant putStudentPlant (@PathVariable(value = "studentId")Long studentId,
                                   @PathVariable(value = "plantId")Long plantId){
         return plantService.putStudentPlant(studentId, plantId);
     }
-
-
-
 
 
 

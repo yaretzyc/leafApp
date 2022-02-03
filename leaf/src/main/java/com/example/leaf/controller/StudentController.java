@@ -15,30 +15,27 @@ public class StudentController {
     @Autowired
     public StudentService studentService;
 
-
-
-
     ///////////////////////////////STUDENTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
+//GET ALL STUDENTS
     @GetMapping("/students/")
     public List<Student> getAllStudents(){
         return studentService.getAllStudents();
     }
 
-    //get all students under a researcher
+//GET all students under a researcher
     @GetMapping("/researcher/{researcherId}/students/")
     public List<Student> getAllResearcherStudents(@PathVariable(value = "researcherId")Long researcherId){
         return studentService.getAllResearcherStudents(researcherId);
     }
 
-    //CREATE STUDENT WITH RESEARCHERID
+//CREATE a student
     @PostMapping("/researcher/{researcherId}/student/")
     public Student createResearcherStudent(@PathVariable(value = "researcherId")Long researcherId,
                                            @RequestBody Student studentObj){
         return studentService.createResearcherStudent(researcherId, studentObj);
     }
 
-    //UPDATE
+//UPDATE a student
     @PutMapping("/researcher/{researcherId}/student/{studentId}/")
     public Student updateResearcherStudent(@PathVariable (value = "researcherId")Long researcherId,
                                            @PathVariable(value = "studentId")Long studentId,
@@ -46,18 +43,12 @@ public class StudentController {
         return studentService.updateResearcherStudent(researcherId, studentId, studentObj);
     }
 
-    //DELETE student ///
+//DELETE a student
     @DeleteMapping("/researcher/{researcherId}/student/{studentId}/")
     public Optional<Student> deleteResearcherStudent(@PathVariable (value= "researcherId")Long researcherId,
                                                      @PathVariable(value = "studentId")Long studentId){
         return studentService.deleteResearcherStudent(researcherId, studentId);
     }
-
-
-    //student get all plants list
-
-
-
 
 
 }

@@ -21,7 +21,6 @@ public class StudentService {
         this.researcherRepository = researcherRepository;
     }
 
-
     private StudentRepository studentRepository;
 
     @Autowired
@@ -30,11 +29,13 @@ public class StudentService {
     }
 
     ///////////////////////////////STUDENTS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
+//GET ALL STUDENTS
     public List<Student> getAllStudents(){
         System.out.println("Service calling getAllStudents ==> ");
         return studentRepository.findAll();
     }
+
+//GET all students under a researcher
     public List<Student> getAllResearcherStudents(Long researcherId){
         System.out.println("service calling getAllResearcherStudents ==>");
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
@@ -46,6 +47,7 @@ public class StudentService {
         }
     }
 
+//CREATE a student
     public Student createResearcherStudent(Long researcherId, Student studentObj){
         System.out.println("service calling createResearcherStudent ==>");
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
@@ -57,6 +59,7 @@ public class StudentService {
         }
     }
 
+//UPDATE a student
     public Student updateResearcherStudent(Long researcherId, Long studentId, Student studentObj){
         System.out.println("service calling updateResearcherStudent ==>");
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
@@ -80,8 +83,7 @@ public class StudentService {
     }
 
 
-    //delete  a student
-
+//DELETE a student
     public Optional<Student> deleteResearcherStudent(Long researcherId, Long studentId){
         System.out.println("service calling deleteResearcherStudent ==>");
         Optional<Researcher> researcher = researcherRepository.findById(researcherId);
@@ -98,12 +100,6 @@ public class StudentService {
         throw new InformationNotFoundException("Researcher with id " + researcherId + " not found");
 
     }
-
-
-
-
-
-
 
 
 
