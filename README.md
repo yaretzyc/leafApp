@@ -12,8 +12,7 @@ For this project there are four models: researchers, students, sections, and pla
 
 #### CONTENTS
 - [User Stories](#USER-STORIES)
-<!-- - [ERD](ENTITY-RELATIONSHIP-DIAGRAMA-(ERD):) -->
-- [ERD](ENTITY-RELATIONSHIP-DIAGRAMA-(ERD)📧)
+- [ERD](ENTITY-RELATIONSHIP-DIAGRAMA-(ERD))
 - [Dependencies](DEPENDENCIES-POM.XML)
 - [Endpoints](ENDPOINTS)
 - [Technologies](TOOLS-AND-TECHNOLOGIES-USED)
@@ -33,7 +32,7 @@ For this project there are four models: researchers, students, sections, and pla
 |7.	As a user, I would like to create a record in my database for the student, researcher, plant, and section entities.
 |8. As a user, I would like to update my database for the student, researcher, plant, and section.
 
-## ENTITY RELATIONSHIP DIAGRAMA (ERD):
+## ENTITY RELATIONSHIP DIAGRAMA (ERD)
 ### Lucidchart
 <p align="center"><img alt="lucidchart_diagram" height="400" src="images/lucidchart.png"/>
    
