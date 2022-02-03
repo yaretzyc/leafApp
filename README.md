@@ -10,6 +10,9 @@ For this project there are four models: researchers, students, sections, and pla
 - __sections model__: information on they location (on the facility) and type (greenhouse, pond, outdoor, etc).
 - **plants model**: Information on the plants in a specific section such as, plantType (terrestrial or aquatic), name, number of pots, isHealthy, comments, section_id, student_id.
 
+#### CONTENTS
+[User Stroies](#USER-STORIES)
+
 
 ## USER STORIES
 | | 
@@ -24,8 +27,12 @@ For this project there are four models: researchers, students, sections, and pla
 |8. As a user, I would like to update my database for the student, researcher, plant, and section.
 
 ## ENTITY RELATIONSHIP DIAGRAMA (ERD):
-![img.png](images/lucidchart.png)
-![img.png](images/visualDiagram.png)
+### Lucidchart
+<p align="center"><img alt="lucidchart_diagram" height="400" src="images/lucidchart.png"/>
+   
+### Visual Diagram (Intellij Idea)
+<p align="center"><img alt="visual diagram from intellij idea" height="750" src="images/visualDiagram.png"/>
+
 
 ## DEPENDENCIES POM.XML
 ```
