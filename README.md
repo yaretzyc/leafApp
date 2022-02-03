@@ -12,7 +12,7 @@ For this project there are four models: researchers, students, sections, and pla
 
 #### CONTENTS
 - [User Stories](#USER-STORIES)
-- [ERD](#ENTITY-RELATIONSHIP-DIAGRAMA-(ERD))
+- [Entity Relationship Diagrama](#ENTITY-RELATIONSHIP-DIAGRAMA-(ERD))
 - [Dependencies](#DEPENDENCIES-POM.XML)
 - [Endpoints](#ENDPOINTS)
 - [Technologies](#TOOLS-AND-TECHNOLOGIES-USED)
