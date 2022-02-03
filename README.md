@@ -2,9 +2,9 @@
 
 ## INTRO
 
-LEAF stands for Lake Environmental Aquatic Facility. It is a database created for individual plant research facilites. This idea came about from a previous work experience working as a research assistant for a team of reasearchers in the Army Corps of Engineers. 
+LEAF stands for Lake Environmental Aquatic Facility. It is a database created for individual research facilites. This idea came about from a previous work experience I had working as a research assistant for a team of reasearchers. 
 
-For this project their are four models: researchers, students, sections, and plants.
+For this project there are four models: researchers, students, sections, and plants.
 - __researchers model__: information on a researcher is stored including unique researcher_id, name, email, phone, and title.
 - __students model__: information on student including unique student_id, name, workType (contract, etc), phone, isActive, researcher_id (primary researcher the student works with).
 - __sections model__: information on they location (on the facility) and type (greenhouse, pond, outdoor, etc).
