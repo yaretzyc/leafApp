@@ -133,7 +133,6 @@ POSTMAN, JAVA ULTIMATE, POSTGRES DATABASE, GIT, JAVA SPRING BOOT, lucidCharo for
 | Lucidchart |  <p align="center"><img alt="lucidchart_logo" height="100" src="images/lucidchart_logo.png"/> | Create the Entity Relationship Diagram
 
 ## Downloading and Running Application
-Usage
 --------------
 1. Clone repository
 ```
