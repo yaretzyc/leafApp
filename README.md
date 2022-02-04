@@ -2,7 +2,7 @@
 
 ## INTRO
 
-LEAF stands for Lake Environmental Aquatic Facility. It is a database created for individual research facilites. This idea came about from a previous work experience I had working as a research assistant for a team of reasearchers. 
+LEAF stands for Lake Environmental Aquatic Facility. It is a database created for individual research facilites. This idea came about from a previous work experience I had working as a research assistant for a team of reasearchers. There was no way to keep track of plants and everything was handwritten and transferred to an excel sheet. I though maybe it would be better to have a database with the details. LEAF would keep track of researcher's project and who they supervise and what plants students are managing. 
 
 For this project there are four models: researchers, students, sections, and plants.
 - __researchers model__: information on a researcher is stored including unique researcher_id, name, email, phone, and title.
@@ -16,6 +16,7 @@ For this project there are four models: researchers, students, sections, and pla
 - [Dependencies](#DEPENDENCIES-POM.XML)
 - [Endpoints](#ENDPOINTS)
 - [Technologies](#TOOLS-AND-TECHNOLOGIES-USED)
+- [Download Application](#Downloading-and-Running-Application)
 - [Project Challenges](#CHALLENGES)
 - [Future Improvements](#FUTURE-IMPROVEMENTS)
 
@@ -131,6 +132,32 @@ POSTMAN, JAVA ULTIMATE, POSTGRES DATABASE, GIT, JAVA SPRING BOOT, lucidCharo for
 | Java Spring Boot | <p align="center"><img alt="java spring boot logo" height="100" src="images/javaspringboot.png"/>| Develop the project's web application using Spring Frameworks
 | Lucidchart |  <p align="center"><img alt="lucidchart_logo" height="100" src="images/lucidchart_logo.png"/> | Create the Entity Relationship Diagram
 
+## Downloading and Running Application
+Usage
+--------------
+1. Clone repository
+```
+git clone https://github.com/yaretzyc/leafApp.git
+```
+2. Create database in PostgreSQL
+call it 
+```
+leaf
+```
+3. Change Application-dev.properties under the resources package to your user details
+
+```
+spring.datasource.username= USERNAME HERE (default is postgres if you don't have a username)
+spring.datasource.password= PASSWORD HERE
+```
+4. Create endpoints in an API Platform 
+   
+   This project used Postman
+   
+   ex. to create a researcher use the POST request and JSON with the researchers details to create a body
+```
+   http://localhost:8080/api/researcher/
+```
 
 
 ## CHALLENGES
