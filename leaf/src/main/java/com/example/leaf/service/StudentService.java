@@ -51,12 +51,14 @@ public class StudentService {
 //CREATE a student
     public Student createResearcherStudent(Long researcherId, Student studentObj){
         System.out.println("service calling createResearcherStudent ==>");
-        //check if student email already exists or not
-        Student student = studentRepository.findByEmail(studentObj.getEmail());
-        if(student != null){
-            throw new InformationExistException("student with email " + student.getEmail() + " already exists");
-        }else {
+
+        Optional<Researcher> researcher = researcherRepository.findById(researcherId);
+        if(researcher.isPresent()){
+            studentObj.setResearcher(researcher.get());
             return studentRepository.save(studentObj);
+        }else {
+            throw new InformationNotFoundException("Researcher with id "  + researcherId + " not found");
+
         }
     }
 
