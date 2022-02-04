@@ -1,4 +1,4 @@
-# LEAF Database/ERD SEI PROJECT 2
+# LEAF Database / SEI PROJECT 2
 
 ## INTRO
 
